@@ -26,24 +26,55 @@ The viewer was developed for the Archival IIIF Server, but also works with any o
 ## Preparations
 
 - Install [Node.js](https://nodejs.org/en/)
-- Install [yarn](https://yarnpkg.com) or [npm](https://www.npmjs.com/)
+- Install [NVM](https://github.com/nvm-sh/nvm)
+- Install [yarn](https://yarnpkg.com)
 
 ## Install
 
-- ```yarn install``` or ```npm install```
-- ```yarn run start``` or  ```npm run start```
+1. Install correct Node version defined in `.nvmrc`
+```
+nvm install
+```
+2. Using the correct Node version
+```
+nvm use
+```
+3. Install yarn globally for given node version
+```
+npm i -g yarn
+```
+4. Install Node dependencies
+```
+yarn
+```
+5. Define a proper `.env` by using `.env.example` as reference.
 
 ## Static build
 
-- ```yarn run build``` or  ```npm run build```
+- Variant "specific": This build has to be run, if we want the content of .env to be compiled into `./public/config.json`
+
+```
+yarn build
+```
+- Variant "generic": This build job has to be run, if the environment configuration file (`./public/config.json`) needs to be left as it is.
+
+```
+yarn build:generic
+```
 
 # Customization
 
 ## General
+- Make sure your `.env` file is properly defined
 
 ## Run tests
+- There currently are no automated tests available.
 
 ## Execute
+- Start development process in watch-mode
+```
+yarn start
+```
 
 # Authors
 
