@@ -1,0 +1,8 @@
+.aiiif-main {
+    display: flex;
+    flex: 1;
+}
+
+.aiiif-main h1:first-of-type {
+    margin: 1.3em 0 1em;
+}

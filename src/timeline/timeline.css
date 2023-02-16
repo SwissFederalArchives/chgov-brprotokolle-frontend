@@ -1,0 +1,56 @@
+.aiiif-main {
+    max-width: 100%;
+}
+
+.row {
+    width: 100%;
+}
+
+.aiiif-timeline-years {
+    width: 100%;
+    margin: 65px 0 50px;
+}
+
+.aiii-timeline-results {
+    border-bottom: 1px solid #dddddd;
+}
+
+.aiii-timeline-results-container {
+    overflow-x: auto;
+}
+
+.aiii-timeline-results > tbody > tr:nth-of-type(4n-3) {
+    background-color: #f9f9f9;
+}
+
+.aiii-timeline-results .table tbody tr td:first-child,
+.aiii-timeline-results .table tbody tr th:first-child {
+    background: inherit;
+    padding-left: 8px;
+}
+
+.aiii-timeline-results__inner {
+    margin-bottom: -1px;
+}
+
+.aiii-timeline-calendar__year {
+    color: #000000;
+}
+
+.aiii-timeline-calendar__month {
+    color: #c9c9c9;
+    cursor: not-allowed;
+}
+
+.aiii-timeline-calendar__month a {
+    display: block;
+    line-height: 1.6;
+    text-decoration: none;
+    padding: 8px 0;
+    margin: -8px 0;
+    color: #069;
+}
+
+.aiii-timeline-calendar__month a.is-selected {
+    border-top: 2px solid red;
+}

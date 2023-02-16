@@ -1,0 +1,52 @@
+.aiiif-treeview {
+    padding: 18px 12px;
+    background-color: #EDECED;
+    overflow-y: auto;
+    width: 100%;
+    align-self: stretch;
+    flex-grow: 2;
+}
+
+.aiiif-treeview  .lds-ripple div {
+    border-color: darkgray !important;
+}
+
+.aiiif-treeview-item {
+    padding: 2px 6px;
+    cursor: pointer;
+    display: inline-flex;
+}
+
+
+.aiiif-treeview-item.aiiif-current {
+    background-color: #7CD6FA;
+    border-radius: 4px;
+}
+
+.aiiif-no-caret {
+    background: none !important;
+    width: 33px;
+}
+
+.aiiif-treeview-caret {
+    margin: -4px -2px -4px -6px;
+}
+
+.aiiif-treeview-label {
+    vertical-align: middle;
+    word-break: break-all;
+    line-height: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.aiiif-label {
+    margin: 9px 0 3px 0;
+    font-weight: bold;
+}
+
+.aiiif-value {
+    margin: 0 0 6px 0;
+}

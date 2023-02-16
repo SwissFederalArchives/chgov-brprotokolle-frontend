@@ -1,0 +1,22 @@
+.aiiif-viewer {
+    z-index: 0;
+    position: relative;
+    background-color: #404346;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    max-height: 100vh;
+    flex: 1;
+    margin: -10px 0 -20px;
+}
+
+.aiiif-plain-text {
+    background-color: #ffffff;
+    padding: 30px;
+    width: 540px;
+    margin: 0 auto;
+    overflow-y: auto;
+    align-self: center;
+    max-height: 90%;
+}

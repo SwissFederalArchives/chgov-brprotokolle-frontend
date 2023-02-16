@@ -1,0 +1,778 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "http://localhost:3000/_temp_/collection.json",
+    "type": "Collection",
+    "label": {
+        "de": ["Bundesratsprotokolle 1848-1903"],
+        "fr": ["[FR] Bundesratsprotokolle 1848-1903"],
+        "it": ["[IT] Bundesratsprotokolle 1848-1903"],
+        "en": ["[EN] Bundesratsprotokolle 1848-1903"]
+    },
+    "items": [
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006139/70006139.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 01.07.-04.07.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 01.07.-04.07.1878"],
+                "it": ["Verbale(-i) delle decisioni 01.07.-04.07.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 01.07.-04.07.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006139%2F70006139-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-07-01T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006140/70006140.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 05.07.-08.07.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 05.07.-08.07.1878"],
+                "it": ["Verbale(-i) delle decisioni 05.07.-08.07.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 05.07.-08.07.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006140%70006140-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-07-05T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006141/70006141.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 09.07.-11.07.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 09.07.-11.07.1878"],
+                "it": ["Verbale(-i) delle decisioni 09.07.-11.07.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 09.07.-11.07.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006141%70006141-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-07-09T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006142/70006142.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 12.07.-15.07.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 12.07.-15.07.1878"],
+                "it": ["Verbale(-i) delle decisioni 12.07.-15.07.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 12.07.-15.07.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006142%70006142-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-07-12T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006143/70006143.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 16.07.-19.07.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 16.07.-19.07.1878"],
+                "it": ["Verbale(-i) delle decisioni 16.07.-19.07.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 16.07.-19.07.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006143%70006143-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-07-16T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006144/70006144.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 20.07.-22.07.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 20.07.-22.07.1878"],
+                "it": ["Verbale(-i) delle decisioni 20.07.-22.07.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 20.07.-22.07.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006144%70006144-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-07-20T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006145/70006145.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 23.07.-25.07.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 23.07.-25.07.1878"],
+                "it": ["Verbale(-i) delle decisioni 23.07.-25.07.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 23.07.-25.07.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006145%70006145-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-07-23T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006146/70006146.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 26.07.-28.07.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 26.07.-28.07.1878"],
+                "it": ["Verbale(-i) delle decisioni 26.07.-28.07.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 26.07.-28.07.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006146%70006146-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-07-26T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006147/70006147.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 29.07.-30.07.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 29.07.-30.07.1878"],
+                "it": ["Verbale(-i) delle decisioni 29.07.-30.07.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 29.07.-30.07.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006147%70006147-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-07-29T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006148/70006148.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 31.07.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 31.07.1878"],
+                "it": ["Verbale(-i) delle decisioni 31.07.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 31.07.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006148%70006148-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-07-31T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006149/70006149.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 01.08.-06.08.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 01.08.-06.08.1878"],
+                "it": ["Verbale(-i) delle decisioni 01.08.-06.08.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 01.08.-06.08.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006149%70006149-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-08-01T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006150/70006150.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 07.08.-12.08.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 07.08.-12.08.1878"],
+                "it": ["Verbale(-i) delle decisioni 07.08.-12.08.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 07.08.-12.08.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006150%70006150-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-08-07T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006151/70006151.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 13.08.-14.08.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 13.08.-14.08.1878"],
+                "it": ["Verbale(-i) delle decisioni 13.08.-14.08.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 13.08.-14.08.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006151%70006151-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-08-13T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006152/70006152.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 15.08.-18.08.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 15.08.-18.08.1878"],
+                "it": ["Verbale(-i) delle decisioni 15.08.-18.08.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 15.08.-18.08.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006152%70006152-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-08-15T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006153/70006153.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 19.08.-23.08.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 19.08.-23.08.1878"],
+                "it": ["Verbale(-i) delle decisioni 19.08.-23.08.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 19.08.-23.08.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006153%70006153-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-08-19T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006154/70006154.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 24.08.-26.08.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 24.08.-26.08.1878"],
+                "it": ["Verbale(-i) delle decisioni 24.08.-26.08.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 24.08.-26.08.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006154%70006154-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-08-24T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006155/70006155.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 27.08.-29.08.1878"],
+                "fr": ["Procès-verbal(-aux) des décisions 27.08.-29.08.1878"],
+                "it": ["Verbale(-i) delle decisioni 27.08.-29.08.1878"],
+                "en": ["[EN] Beschlussprotokoll(-e) 27.08.-29.08.1878"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006155%70006155-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1878-08-27T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006139/70006139.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 01.07.-04.07.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 01.07.-04.07.1879"],
+                "it": ["Verbale(-i) delle decisioni 01.07.-04.07.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 01.07.-04.07.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006139%2F70006139-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-07-01T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006140/70006140.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 05.07.-08.07.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 05.07.-08.07.1879"],
+                "it": ["Verbale(-i) delle decisioni 05.07.-08.07.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 05.07.-08.07.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006140%70006140-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-07-05T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006141/70006141.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 09.07.-11.07.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 09.07.-11.07.1879"],
+                "it": ["Verbale(-i) delle decisioni 09.07.-11.07.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 09.07.-11.07.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006141%70006141-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-07-09T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006142/70006142.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 12.07.-15.07.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 12.07.-15.07.1879"],
+                "it": ["Verbale(-i) delle decisioni 12.07.-15.07.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 12.07.-15.07.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006142%70006142-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-07-12T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006143/70006143.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 16.07.-19.07.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 16.07.-19.07.1879"],
+                "it": ["Verbale(-i) delle decisioni 16.07.-19.07.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 16.07.-19.07.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006143%70006143-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-07-16T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006144/70006144.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 20.07.-22.07.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 20.07.-22.07.1879"],
+                "it": ["Verbale(-i) delle decisioni 20.07.-22.07.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 20.07.-22.07.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006144%70006144-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-07-20T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006145/70006145.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 23.07.-25.07.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 23.07.-25.07.1879"],
+                "it": ["Verbale(-i) delle decisioni 23.07.-25.07.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 23.07.-25.07.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006145%70006145-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-07-23T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006146/70006146.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 26.07.-28.07.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 26.07.-28.07.1879"],
+                "it": ["Verbale(-i) delle decisioni 26.07.-28.07.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 26.07.-28.07.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006146%70006146-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-07-26T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006147/70006147.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 29.07.-30.07.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 29.07.-30.07.1879"],
+                "it": ["Verbale(-i) delle decisioni 29.07.-30.07.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 29.07.-30.07.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006147%70006147-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-07-29T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006148/70006148.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 31.07.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 31.07.1879"],
+                "it": ["Verbale(-i) delle decisioni 31.07.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 31.07.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006148%70006148-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-07-31T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006149/70006149.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 01.08.-06.08.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 01.08.-06.08.1879"],
+                "it": ["Verbale(-i) delle decisioni 01.08.-06.08.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 01.08.-06.08.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006149%70006149-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-08-01T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006150/70006150.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 07.08.-12.08.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 07.08.-12.08.1879"],
+                "it": ["Verbale(-i) delle decisioni 07.08.-12.08.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 07.08.-12.08.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006150%70006150-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-08-07T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006151/70006151.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 13.08.-14.08.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 13.08.-14.08.1879"],
+                "it": ["Verbale(-i) delle decisioni 13.08.-14.08.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 13.08.-14.08.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006151%70006151-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-08-13T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006152/70006152.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 15.08.-18.08.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 15.08.-18.08.1879"],
+                "it": ["Verbale(-i) delle decisioni 15.08.-18.08.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 15.08.-18.08.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006152%70006152-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-08-15T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006153/70006153.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 19.08.-23.08.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 19.08.-23.08.1879"],
+                "it": ["Verbale(-i) delle decisioni 19.08.-23.08.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 19.08.-23.08.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006153%70006153-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-08-19T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006154/70006154.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 24.08.-26.08.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 24.08.-26.08.1879"],
+                "it": ["Verbale(-i) delle decisioni 24.08.-26.08.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 24.08.-26.08.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006154%70006154-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-08-24T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006155/70006155.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 27.08.-29.08.1879"],
+                "fr": ["Procès-verbal(-aux) des décisions 27.08.-29.08.1879"],
+                "it": ["Verbale(-i) delle decisioni 27.08.-29.08.1879"],
+                "en": ["[EN] Beschlussprotokoll(-e) 27.08.-29.08.1879"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006155%70006155-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1879-08-27T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006139/70006139.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 01.07.-04.07.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 01.07.-04.07.1880"],
+                "it": ["Verbale(-i) delle decisioni 01.07.-04.07.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 01.07.-04.07.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006139%2F70006139-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-07-01T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006140/70006140.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 05.07.-08.07.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 05.07.-08.07.1880"],
+                "it": ["Verbale(-i) delle decisioni 05.07.-08.07.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 05.07.-08.07.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006140%70006140-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-07-05T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006141/70006141.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 09.07.-11.07.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 09.07.-11.07.1880"],
+                "it": ["Verbale(-i) delle decisioni 09.07.-11.07.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 09.07.-11.07.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006141%70006141-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-07-09T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006142/70006142.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 12.07.-15.07.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 12.07.-15.07.1880"],
+                "it": ["Verbale(-i) delle decisioni 12.07.-15.07.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 12.07.-15.07.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006142%70006142-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-07-12T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006143/70006143.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 16.07.-19.07.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 16.07.-19.07.1880"],
+                "it": ["Verbale(-i) delle decisioni 16.07.-19.07.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 16.07.-19.07.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006143%70006143-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-07-16T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006144/70006144.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 20.07.-22.07.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 20.07.-22.07.1880"],
+                "it": ["Verbale(-i) delle decisioni 20.07.-22.07.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 20.07.-22.07.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006144%70006144-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-07-20T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006145/70006145.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 23.07.-25.07.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 23.07.-25.07.1880"],
+                "it": ["Verbale(-i) delle decisioni 23.07.-25.07.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 23.07.-25.07.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006145%70006145-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-07-23T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006146/70006146.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 26.07.-28.07.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 26.07.-28.07.1880"],
+                "it": ["Verbale(-i) delle decisioni 26.07.-28.07.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 26.07.-28.07.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006146%70006146-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-07-26T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006147/70006147.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 29.07.-30.07.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 29.07.-30.07.1880"],
+                "it": ["Verbale(-i) delle decisioni 29.07.-30.07.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 29.07.-30.07.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006147%70006147-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-07-29T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006148/70006148.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 31.07.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 31.07.1880"],
+                "it": ["Verbale(-i) delle decisioni 31.07.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 31.07.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006148%70006148-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-07-31T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006149/70006149.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 01.08.-06.08.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 01.08.-06.08.1880"],
+                "it": ["Verbale(-i) delle decisioni 01.08.-06.08.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 01.08.-06.08.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006149%70006149-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-08-01T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006150/70006150.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 07.08.-12.08.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 07.08.-12.08.1880"],
+                "it": ["Verbale(-i) delle decisioni 07.08.-12.08.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 07.08.-12.08.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006150%70006150-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-08-07T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006151/70006151.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 13.08.-14.08.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 13.08.-14.08.1880"],
+                "it": ["Verbale(-i) delle decisioni 13.08.-14.08.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 13.08.-14.08.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006151%70006151-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-08-13T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006152/70006152.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 15.08.-18.08.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 15.08.-18.08.1880"],
+                "it": ["Verbale(-i) delle decisioni 15.08.-18.08.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 15.08.-18.08.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006152%70006152-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-08-15T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006153/70006153.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 19.08.-23.08.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 19.08.-23.08.1880"],
+                "it": ["Verbale(-i) delle decisioni 19.08.-23.08.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 19.08.-23.08.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006153%70006153-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-08-19T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006154/70006154.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 24.08.-26.08.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 24.08.-26.08.1880"],
+                "it": ["Verbale(-i) delle decisioni 24.08.-26.08.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 24.08.-26.08.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006154%70006154-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-08-24T00:00:00Z"
+        },
+        {
+            "id": "http://chgov.bar.admin.ch.ddev.local/manifests/70006155/70006155.json",
+            "type": "Manifest",
+            "label": {
+                "de": ["Beschlussprotokoll(-e) 27.08.-29.08.1880"],
+                "fr": ["Procès-verbal(-aux) des décisions 27.08.-29.08.1880"],
+                "it": ["Verbale(-i) delle decisioni 27.08.-29.08.1880"],
+                "en": ["[EN] Beschlussprotokoll(-e) 27.08.-29.08.1880"]
+            },
+            "thumbnail": {
+                "id": "http://chgov.bar.admin.ch.ddev.local:8182/iiif/2/70006155%70006155-0.jpg/full/!100,100/0/default.jpg",
+                "format": "image/jpeg"
+            },
+            "navDate": "1880-08-27T00:00:00Z"
+        }
+    ]
+}

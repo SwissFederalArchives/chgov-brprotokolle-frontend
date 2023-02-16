@@ -1,0 +1,15 @@
+.pagination-container {
+    margin-bottom: 2em;
+}
+
+@media only screen and (max-width: 767px) {
+    .pagination-container > span.pull-left {
+        float: none!important;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .pagination-container > .pagination.pull-right {
+        margin-left: -6px;
+    }
+}

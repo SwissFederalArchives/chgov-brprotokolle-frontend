@@ -1,0 +1,3 @@
+[submodule "public/md"]
+	path = public/md
+	url = https://github.com/SwissFederalArchives/chgov-brprotokolle-markdown.git

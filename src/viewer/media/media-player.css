@@ -1,0 +1,69 @@
+.video-js .vjs-time-control {
+    display: block;
+}
+.video-js .vjs-remaining-time {
+    display: none;
+}
+
+.aiiif-audio-player .vjs-big-play-button {
+    display: none !important;
+}
+
+.aiiif-audio-player .vjs-fullscreen-control {
+    display: none !important;
+}
+.aiiif-audio-player .vjs-control-bar {
+    display: flex !important;
+}
+
+.aiiif-audio-player {
+    height: 72px;
+    width: 100%;
+}
+
+.aiiif-content-audio {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.aiiif-video-player {
+    height: 100%;
+    width: 100%;
+    min-height: 50%;
+}
+
+.aiiif-media-player-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.aiiif-content-audio > div:first-of-type {
+    min-height: 42px;
+}
+
+.video-js {
+    font-size: 14px;
+}
+
+.vjs-audio {
+    min-height: 42px;
+}
+
+
+.aiiif-player-container {
+    width: 100%;
+}
+
+.aiiif-player-container.aiiif-video {
+    height: 100%;
+}
+
+.aiiif-player-container > div {
+    height: inherit;
+}
+
+.aiiif-video-splitter > .aiiif-b {
+    position: relative;
+}

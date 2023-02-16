@@ -1,0 +1,85 @@
+.aiiif-mirador {
+    height: 100%;
+    font-family: "Frutiger Neue", sans-serif;
+}
+
+.aiiif-mirador #addBtn {
+    display: none;
+}
+
+.aiiif-mirador .jss385,
+.aiiif-mirador .jss435,
+.aiiif-mirador .MuiTypography-overline,
+.aiiif-mirador .MuiTypography-h4,
+.aiiif-mirador .MuiTypography-subtitle2,
+.aiiif-mirador .MuiTypography-body1,
+.aiiif-mirador .MuiTypography-body2,
+.aiiif-mirador .MuiMenuItem-root,
+.aiiif-mirador .MuiListSubheader-root,
+.aiiif-mirador .MuiTypography-caption,
+.aiiif-mirador .MuiTypography-h1,
+.aiiif-mirador .MuiFab-root,
+.aiiif-mirador .MuiTooltip-popper,
+.aiiif-mirador .MuiTypography-h3 {
+    font-family: "Frutiger Neue", sans-serif;
+}
+
+.MuiTooltip-popper > div {
+    font-size: 0.9rem!important;
+}
+
+.aiiif-mirador .mirador-companion-window-header h3 {
+    margin-bottom: 0!important;
+}
+
+.aiiif-mirador .ocr-line {
+    color: inherit;
+}
+
+.aiiif-mirador button,
+.aiiif-mirador a {
+    color: #069;
+}
+
+.aiiif-mirador header {
+    padding: 0;
+}
+
+.aiiif-mirador .MuiTabs-flexContainer .Mui-selected {
+    color: #666666;
+    border-color: currentColor;
+}
+
+.aiiif-mirador .mirador-window-top-bar {
+    border: 0!important;
+}
+
+.aiiif-mirador .mirador-companion-window-header h3 {
+    margin-bottom: 0!important;
+    display: inline-flex;
+    flex-direction: column; 
+    align-self: flex-start; 
+    justify-content: flex-start; 
+    align-items: self-start; 
+    padding-top: 12px;
+}
+
+.aiiif-mirador .mirador-companion-window-header h3 > .MuiButtonBase-root {
+    margin: 6px 0 15px;
+}
+
+.aiiif-mirador .mirador-companion-window-title-controls {
+    width: 100%;
+}
+
+/** 
+ * Not sure if this is safe, as it hides the mirador brand too... 
+ **/
+/*
+.aiiif-mirador .mirador-workspace-control-panel {
+    display: none;
+}
+.aiiif-mirador .mirador-workspace-viewport {
+    padding-left: 0;
+}
+*/
