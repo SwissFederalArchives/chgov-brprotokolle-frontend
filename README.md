@@ -80,7 +80,7 @@ yarn start
 
 # License
 
-The MIT License (MIT), see [LICENSE](LICENSE)
+GNU Affero General Public License (AGPLv3), see [LICENSE](LICENSE)
 
 # Contribute
 
