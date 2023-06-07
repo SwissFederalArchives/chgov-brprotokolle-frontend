@@ -30,6 +30,8 @@ class Config {
 
     private readonly allowedOrigins: string | string[] = '*';
 
+    private readonly htmlViewer: boolean;
+
     private readonly translations: { [key: string]: string } = {
         de: 'Deutsch',
         fr: 'Français',
@@ -54,6 +56,7 @@ class Config {
         this.lazyTree = config.lazyTree ? config.lazyTree : false;
         this.hideUnbranchedTrees = config.hideUnbranchedTrees ? config.hideUnbranchedTrees : false;
         this.externalSearchUrl = config.externalSearchUrl;
+        this.htmlViewer = config.htmlViewer ?? false;
         this.overviewYearSliderDefaultRange = config.overviewYearSliderDefaultRange ? config.overviewYearSliderDefaultRange : [1874, 1900];
         this.fuzzySearchDefault = config.fuzzySearchDefault ? config.fuzzySearchDefault : '0';
         this.solrFieldConfig = config.solrFieldConfig ? config.solrFieldConfig : {
@@ -163,6 +166,10 @@ class Config {
 
     getID() {
         return this.id;
+    }
+
+    getHtmlViewer() {
+        return this.htmlViewer;
     }
 
     getOverviewYearSliderDefaultRange() {

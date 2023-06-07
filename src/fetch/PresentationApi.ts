@@ -1,10 +1,10 @@
 import Cache from '../lib/Cache';
 import IManifestData, {
-    IAuthService, IManifestReference, IPresentationApiImage, IPresentationApiItemsType,
+    IAuthService, IHomepage, IManifestReference, IPresentationApiImage, IPresentationApiItemsType,
     IPresentationApiManifestation, IPresentationApiResource, ISearchService, ISeeAlso
 } from '../interface/IManifestData';
 import ManifestData from '../entity/ManifestData';
-import ManifestDataThumnail from '../entity/ManifestDataThumbnail';
+import ManifestDataThumbnail from '../entity/ManifestDataThumbnail';
 import ISequence from '../interface/ISequence';
 import UrlValidation from '../lib/UrlValidation';
 import Config from '../lib/Config';
@@ -13,6 +13,7 @@ import { ServiceProfile } from "@iiif/vocabulary/dist-commonjs";
 import Token from "../lib/Token";
 import {IIIFResource, PropertyValue} from "manifesto.js";
 import ITranscription from "../interface/ITranscription";
+import i18n from "i18next";
 
 declare let global: {
     config: Config;
@@ -186,6 +187,7 @@ class Manifest {
                         manifestData.attribution = manifestoData.getRequiredStatement();
                         manifestData.manifestations = t.getManifestations(manifestoData);
                         manifestData.seeAlso = t.getSeeAlso(manifestoData);
+                        manifestData.homepages = t.getHomepages(manifestoData);
                         manifestData.services = manifestoData.getServices();
                         manifestData.restricted = false;
                         if (manifestData.type === 'Collection') {
@@ -365,7 +367,7 @@ class Manifest {
                 let type: IPresentationApiItemsType = 'file';
                 if (fileResource.type === 'pdf' || fileResource.format === 'pdf/application') {
                     type = 'pdf';
-                } else if (fileResource.format.endsWith('/plain')) {
+                } else if (fileResource.format?.endsWith('/plain')) {
                     type = 'plain';
                 }
                 return {resource: fileResource, images: [], type};
@@ -413,6 +415,44 @@ class Manifest {
         return seeAlso.length > 1 ? seeAlso : undefined;
     }
 
+    static getHomepages(manifestoData: IIIFResource): IHomepage[] | undefined {
+
+        const homepagesRaw = manifestoData.getProperty("homepage");
+        if (!homepagesRaw || !Array.isArray(homepagesRaw) || homepagesRaw.length === 0) {
+            return undefined;
+        }
+
+        const homepages: IHomepage[] = [];
+        for (const rawHomepage of homepagesRaw) {
+            if (!('id' in rawHomepage)) {
+                console.log('Homepage has no id!')
+                continue;
+            }
+            if (!('type' in rawHomepage)) {
+                console.log('Homepage has no type!')
+                continue;
+            }
+            if (!('label' in rawHomepage)) {
+                console.log('Homepage has no label!')
+                continue;
+            }
+
+            const label = new PropertyValue();
+            for (const [key, value] of Object.entries(rawHomepage.label)) {
+                label.setValue(value as string, key)
+            }
+            homepages.push({
+                id: rawHomepage.id,
+                type: rawHomepage.type,
+                label,
+                format: rawHomepage.format,
+            })
+        }
+
+        return homepages;
+    }
+
+
     static getAudioVideoResource(sequence0: ISequence): IPresentationApiResource | undefined {
         if (!sequence0.__jsonld) {
             return undefined;
@@ -433,7 +473,7 @@ class Manifest {
         }
 
         const mime = element0.format;
-        const mediaType = mime.substr(0, 5);
+        const mediaType = mime.slice(0, 5);
         if (mediaType !== 'audio' && mediaType !== 'video') {
             return undefined;
         }
@@ -455,14 +495,18 @@ class Manifest {
         const images: IPresentationApiImage[] = [];
         for (const canvas of sequence0.getCanvases()) {
             try {
+
                 const source = canvas.getContent()[0].getBody()[0];
-                if (
-                    source.getType().toLowerCase() === 'video' ||
-                    source.getFormat().substr(0, 5) === 'video'
-                ) {
+                const type = (source.getType() ?? '').toLowerCase();
+                let format = source.getFormat() ?? '';
+                if (format === '') {
+                    format = source.__jsonld?.value ?? '';
+                }
+                format = format.toLowerCase();
+                if (type === 'video' || format.slice(0, 5) === 'video') {
                     return {
                         resource: {
-                            format: source.getFormat(),
+                            format,
                             id: source.id,
                             type: 'video',
                             manifestations: this.getManifestations(canvas)
@@ -471,14 +515,11 @@ class Manifest {
                         type: 'audioVideo'
                     };
                 }
-                if (
-                    source.getType().toLocaleLowerCase() === 'sound' ||
-                    source.getType().toLocaleLowerCase() === 'audio' ||
-                    source.getFormat().substr(0, 5) === 'audio'
-                ) {
+
+                if (type === 'sound' || type === 'audio' || format.slice(0, 5) === 'audio') {
                     return {
                         resource: {
-                            format: source.getFormat(),
+                            format: source.__jsonld?.value ?? '',
                             id: source.id,
                             type: 'audio',
                             manifestations: this.getManifestations(canvas)
@@ -487,10 +528,10 @@ class Manifest {
                         type: 'audioVideo'
                     };
                 }
-                if (source.getFormat().toLowerCase() === 'application/pdf') {
+                if (format === 'application/pdf') {
                     return {
                         resource: {
-                            format: 'application/pdf',
+                            format,
                             id: source.id,
                             type: 'pdf',
                             manifestations: this.getManifestations(canvas)
@@ -499,10 +540,22 @@ class Manifest {
                         type: 'pdf'
                     };
                 }
-                if (source.getFormat().toLowerCase() === 'text/plain') {
+                if (format === 'text/html') {
                     return {
                         resource: {
-                            format: 'text/plain',
+                            format,
+                            id: source.id,
+                            type: 'html',
+                            manifestations: this.getManifestations(canvas)
+                        },
+                        images,
+                        type: 'html'
+                    };
+                }
+                if (format.startsWith('text/')) {
+                    return {
+                        resource: {
+                            format,
                             id: source.id,
                             type: 'plainText',
                             manifestations: this.getManifestations(canvas)
@@ -512,7 +565,7 @@ class Manifest {
                     };
                 }
 
-                if (source.getType() === 'image') {
+                if (type === 'image') {
                     const profiles = [
                         'level2',
                         'level3',
@@ -536,7 +589,7 @@ class Manifest {
                 } else {
                     return {
                         resource: {
-                            format: source.getFormat(),
+                            format,
                             id: source.id,
                             type: 'file',
                             manifestations: this.getManifestations(canvas)
@@ -670,7 +723,7 @@ class Manifest {
             return undefined;
         }
 
-        const thumbnail = new ManifestDataThumnail();
+        const thumbnail = new ManifestDataThumbnail();
         thumbnail.id = manifestoThumbnail.id;
 
         const services = [
@@ -699,7 +752,7 @@ class Manifest {
         for (const key in manifestoManifests) {
             if (manifestoManifests.hasOwnProperty(key)) {
                 const manifestoManifest = manifestoManifests[key];
-                
+
                 manifests.push({
                     id: manifestoManifest.id,
                     label: manifestoManifest.getLabel(),
@@ -729,7 +782,7 @@ class Manifest {
                     label: manifestoManifest.getLabel(),
                     thumbnail: this.getThumbnail(manifestoManifest),
                     type: manifestoManifest.getProperty('type').replace('sc:', ''),
-                    ...((this.isV3(manifestoData) && manifestoManifest.getProperty('navDate')) && { navDate: manifestoManifest.getProperty('navDate') })
+                    ...((this.isV3(manifestoData) && manifestoManifest.getProperty('navDate')) && { navDate: manifestoManifest.getProperty('navDate') }),
                 });
             }
         }
@@ -800,8 +853,6 @@ class Manifest {
 
         return false;
     }
-
-
 }
 
 export default Manifest;

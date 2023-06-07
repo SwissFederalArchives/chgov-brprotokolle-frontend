@@ -4,9 +4,9 @@ import {Translation} from 'react-i18next';
 import {getLocalized} from "../lib/ManifestHelpers";
 import {useContext, useState} from "react";
 import {AppContext} from "../AppContext";
-import {InputBase} from "@material-ui/core";
+import {InputBase} from "@mui/material";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSearch, faTh, faThList} from "@fortawesome/free-solid-svg-icons";
+import {faMagnifyingGlass, faTh, faThList} from "@fortawesome/free-solid-svg-icons";
 import removeDiacritics from "../lib/Diacritics";
 import i18next from "i18next";
 
@@ -70,10 +70,10 @@ export default function FolderView() {
             <nav className="aiiif-bar">
                 <div className="aiiif-bar-search">
                     <div className="">
-                        <FontAwesomeIcon icon={faSearch} />
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </div>
                     <InputBase
-                        placeholder={i18next.t('common:searchInputLabel')}
+                        placeholder={i18next.t('common:searchInputLabel') ?? undefined}
                         inputProps={{ 'aria-label': 'search' }}
                         type="search"
                         value={search}

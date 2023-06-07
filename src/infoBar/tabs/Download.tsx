@@ -3,6 +3,7 @@ import {basename, getLocalized} from "../../lib/ManifestHelpers";
 import i18next from "i18next";
 import "./download.css"
 import {AppContext} from "../../AppContext";
+import {languageFilter} from "./Metadata";
 
 export default function Download() {
 
@@ -28,8 +29,8 @@ export default function Download() {
         output.push(
             <div className="aiiif-download" key="elementDownload1">
                 <a href={image.id + '/full/max/0/default.' + extension}
-                   download={basename(image.id)}>{i18next.t('common:image')} (
-                    {extension.toUpperCase()} {image.width}x{image.height})</a>
+                   download={basename(image.id)}><>{i18next.t('common:image')} (
+                    {extension.toUpperCase()} {image.width}x{image.height})</></a>
             </div>
         );
         if (image.width > 1000 || image.height > 1000) {
@@ -38,8 +39,8 @@ export default function Download() {
             output.push(
                 <div className="aiiif-download" key="elementDownload2">
                     <a href={image.id + '/full/'+smallWidth+','+smallHeight+'/0/default.jpg'}
-                       download={basename(image.id)+'.jpg'}>{i18next.t('common:image')} (JPG
-                        {smallWidth}x{smallHeight})</a>
+                       download={basename(image.id)+'.jpg'}><>{i18next.t('common:image')} (JPG
+                        {smallWidth}x{smallHeight})</></a>
                 </div>
             );
         }
@@ -54,16 +55,13 @@ export default function Download() {
         manifestations = resource.manifestations;
     }
 
-    for (const i in manifestations) {
-        if (manifestations.hasOwnProperty(i)) {
-            const manifestation = manifestations[i];
-            output.push(
-                <a key={i} href={manifestation.url} className="aiiif-download" target="_blank"
-                   rel="noopener noreferrer">
-                    {getLocalized(manifestation.label)}
-                </a>
-            );
-        }
+    for(const manifestation of languageFilter(manifestations)) {
+        output.push(
+            <a key={Math.random()} href={manifestation.url} className="aiiif-download" target="_blank"
+               rel="noopener noreferrer">
+                {getLocalized(manifestation.label)}
+            </a>
+        );
     }
 
     if (currentManifest.seeAlso) {

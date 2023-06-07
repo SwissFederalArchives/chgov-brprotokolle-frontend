@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import Metadata from "./tabs/metadata";
+import Metadata from "./tabs/Metadata";
 import Download from "./tabs/Download";
 import Pages from "./tabs/Pages";
 import Share from "./tabs/Share";
@@ -32,7 +32,7 @@ export default function Tabs() {
 
     return <>
         <div className="aiiif-tab-container">
-            <h2>{i18next.t('common:' + tab2)}</h2>
+            <h2><>{i18next.t('common:' + tab2)}</></h2>
             {content}
         </div>
     </>

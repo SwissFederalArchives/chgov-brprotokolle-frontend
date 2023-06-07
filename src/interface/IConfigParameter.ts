@@ -11,8 +11,9 @@ export default interface IConfigParameter {
     hideUnbranchedTrees?: boolean;
     externalSearchUrl?: string;
     allowedOrigins?: string | string[];
+    htmlViewer?: boolean;
     overviewYearSliderDefaultRange?: number[];
-    solrFieldConfig: ISolrRequest,
+    solrFieldConfig: ISolrRequest;
     fuzzySearchDefault?: '0' | '1' | '2';
 }
 

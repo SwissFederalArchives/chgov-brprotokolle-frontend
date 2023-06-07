@@ -16,8 +16,8 @@ import PageManual from "../page/manual";
 import PageInformation from "../page/information";
 import PageProtocolVariant3 from "../page/protocol/protocol";
 import PageNotFound from "../page/notfound";
-import { getLocalized } from 'lib/ManifestHelpers';
-import { capitalizeFirstLetter, setPageTitle } from 'util/misc';
+import { getLocalized } from '../lib/ManifestHelpers';
+import { capitalizeFirstLetter, setPageTitle } from '../util/misc';
 import PresentationApi from "../fetch/PresentationApi";
 
 require('../topBar/topbar.css');
@@ -42,34 +42,36 @@ export default function Main() {
         }
     }, [pathname, search, hash]) // eslint-disable-line react-hooks/exhaustive-deps
 
-    return <>
-        <Alert />
-        <Login />
-        <FederationHeader />
-        <Switch>
-            <Route exact path="/">
-                <Redirect to="/search" />
-            </Route>
-            <Route path="/search">
-                <PageSearch />
-            </Route>
-            <Route path="/browser">
-                <PageOverview />
-            </Route>
-            <Route path="/protocol">
-                <PageProtocolVariant3 />
-            </Route>
-            <Route path="/manual">
-                <PageManual />
-            </Route>
-            <Route path="/information">
-                <PageInformation />
-            </Route>
-            <Route path="*">
-                <PageNotFound />
-            </Route>
-        </Switch>
-        <FederationFooter />
-    </>;
+    return (
+        <div className="aiiif-root">
+            <Alert />
+            <Login />
+            <FederationHeader />
+            <Switch>
+                <Route exact path="/">
+                    <Redirect to="/search" />
+                </Route>
+                <Route path="/search">
+                    <PageSearch />
+                </Route>
+                <Route path="/browser">
+                    <PageOverview />
+                </Route>
+                <Route path="/protocol">
+                    <PageProtocolVariant3 />
+                </Route>
+                <Route path="/manual">
+                    <PageManual />
+                </Route>
+                <Route path="/information">
+                    <PageInformation />
+                </Route>
+                <Route path="*">
+                    <PageNotFound />
+                </Route>
+            </Switch>
+            <FederationFooter />
+        </div>
+    );
 
 }

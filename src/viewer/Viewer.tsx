@@ -6,6 +6,7 @@ import './viewer.css';
 import PdfViewer from "./pdf/PdfViewer";
 import {useContext} from "react";
 import {AppContext} from "../AppContext";
+import HtmlViewer from "./html/HtmlViewer";
 
 
 export default function Viewer() {
@@ -33,8 +34,14 @@ export default function Viewer() {
         </div>;
     }
 
-    if (currentManifest.itemsType=== 'pdf') {
+    if (currentManifest.itemsType === 'pdf') {
         return <PdfViewer />;
+    }
+
+    if (currentManifest.itemsType === 'html') {
+        return <div className="aiiif-viewer">
+            <HtmlViewer />
+        </div>;
     }
 
     return <></>;

@@ -4,7 +4,7 @@ import { Translation } from 'react-i18next';
 import { LinearProgress } from '@material-ui/core';
 import { ISearchResults, ISolrRequest } from 'interface/IOcrSearchData';
 import { replaceSearchParameters } from '../util/url';
-import { isSolrFrequencySortable } from 'util/solr';
+import { isSolrFrequencySortable } from '../util/solr';
 import Tooltip from '../tooltip/tooltip';
 import Config from '../lib/Config';
 import DOMPurify from 'dompurify';
@@ -164,7 +164,7 @@ class SearchFormSimple extends React.Component<IProps, IState> {
                                             className="search-form-tooltip"
                                             title={
                                                 <div dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
-                                                    __html: DOMPurify.sanitize(t('searchAdvancedInputTooltip'))
+                                                    __html: DOMPurify.sanitize(`${t('searchAdvancedInputTooltip')}`)
                                                 }} />
                                             }
                                         />
@@ -183,11 +183,11 @@ class SearchFormSimple extends React.Component<IProps, IState> {
                                 {(!isSearchPending && searchResults && queryParams.q) && (
                                     <p className="mdc-typography search-form-info__text"
                                         dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
-                                            __html: DOMPurify.sanitize(t('searchFormFoundMatches', {
+                                            __html: DOMPurify.sanitize(`${t('searchFormFoundMatches', {
                                                 numFound: searchResults?.response?.numFound,
                                                 q: this.state.query,
                                                 QTime: searchResults?.responseHeader?.QTime,
-                                            }))
+                                            })}`)
                                         }}
                                     />
                                 )}

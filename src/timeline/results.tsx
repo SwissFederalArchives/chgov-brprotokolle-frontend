@@ -58,7 +58,7 @@ const TimelineResults = function (props: IProps) {
                                                 
                                                 return (dateYear === selectedYear && dateMonth === selectedMonth) && (
                                                     <tr key={`${manifest.id}_${dateYear}_${dateMonth}_${i}`}>
-                                                        <td>{date.format(t('timelineResultsDateFormat'))}</td>
+                                                        <td>{date.format(`${t('timelineResultsDateFormat')}`)}</td>
                                                         <td>
                                                             <Link to={`protocol?manifest=${manifest.id}`}>{getLocalized(manifest.label)}</Link>
                                                         </td>

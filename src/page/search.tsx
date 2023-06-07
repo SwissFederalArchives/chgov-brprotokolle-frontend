@@ -15,7 +15,7 @@ export default function PageSearch() {
                         <div style={{marginTop: '40px', marginBottom: '15px'}}>
                             <h1>{t('headerProjectSubtitle')}</h1>
                             <h3 dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
-                                __html: DOMPurify.sanitize(t('searchIntroductionText'))
+                                __html: DOMPurify.sanitize(`${t('searchIntroductionText')}`)
                             }} />
                         </div>
                         <Search />

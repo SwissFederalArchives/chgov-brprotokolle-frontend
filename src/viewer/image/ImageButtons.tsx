@@ -32,6 +32,7 @@ export default function ImageButtons(props: IProps) {
         <button id={"rotate-right-button-" + props.viewerId}>
             <FontAwesomeIcon icon={faUndo} flip="horizontal" />
         </button>
+        <span id={"rotate-left-button-" + props.viewerId} />
         <button id={"home-button-" + props.viewerId.toString()}>
             <FontAwesomeIcon icon={faHome}  />
         </button>
@@ -40,13 +41,13 @@ export default function ImageButtons(props: IProps) {
         </button>
         {(props.data.length > 1) &&
         <button disabled={(page === 0)}
-                onClick={() => setPage(page - 1)} title={i18next.t('common:previousPage')}>
+                onClick={() => setPage(page - 1)} title={i18next.t('common:previousPage') ?? undefined}>
             <FontAwesomeIcon icon={faArrowLeft}/>
         </button>
         }
         {(props.data.length > 1) &&
         <button disabled={(page + 1 === props.data.length)}
-                onClick={() => setPage(page + 1)} title={i18next.t('common:nextPage')}>
+                onClick={() => setPage(page + 1)} title={i18next.t('common:nextPage') ?? undefined}>
             <FontAwesomeIcon icon={faArrowRight}/>
         </button>
         }

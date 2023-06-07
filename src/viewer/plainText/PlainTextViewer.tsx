@@ -3,6 +3,8 @@ import ViewerSpinner from '../ViewerSpinner';
 import Nl2br from './Nl2br';
 import {useContext, useEffect, useState} from "react";
 import {AppContext} from "../../AppContext";
+import chardet from 'chardet';
+import {Buffer} from 'buffer';
 
 export default function PlainTextViewer() {
 
@@ -15,12 +17,17 @@ export default function PlainTextViewer() {
             const source = currentManifest.resource.id;
             fetch(source)
                 .then(function(response) {
-                    return response.text();
+                    let charSet: string | undefined = getCharsetFromHeader(response);
+                    response.arrayBuffer().then(buffer => {
+                        if (!charSet) {
+                            charSet = chardet.detect(Buffer.from(buffer)) ?? undefined;
+                        }
+                        const decoder = new TextDecoder(charSet);
+                        const text = decoder.decode(buffer);
+                        setLoading(false);
+                        setText(text);
+                    });
                 })
-                .then(function(text) {
-                    setLoading(false);
-                    setText(text);
-                });
         }
     });
 
@@ -35,4 +42,19 @@ export default function PlainTextViewer() {
     return <div className="aiiif-plain-text">
         <Nl2br text={text} />
     </div>;
+}
+
+export function getCharsetFromHeader(response: Response): string | undefined {
+    const contentType = response.headers.get('content-type');
+    if (!contentType) {
+        return undefined;
+    }
+    for (const entry of contentType.split(';')) {
+        const entryTrimmed = entry.trim();
+        if (entryTrimmed.startsWith('charset=')) {
+            return entryTrimmed.slice(8, entryTrimmed.length);
+        }
+    }
+
+    return undefined;
 }

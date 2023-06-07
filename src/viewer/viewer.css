@@ -20,3 +20,12 @@
     align-self: center;
     max-height: 90%;
 }
+
+.aiiif-viewer-html {
+    background-color: #ffffff;
+    overflow-y: auto;
+    align-self: center;
+    max-height: 90%;
+    padding: 18px;
+    margin: 18px;
+}

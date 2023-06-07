@@ -5,7 +5,7 @@ import Cookie from 'universal-cookie';
 import PresentationApi from "../fetch/PresentationApi";
 import IManifestData from "../interface/IManifestData";
 import ITimelineData from "../interface/ITimelineData";
-import RangeSlider from 'rangeSlider/rangeSlider';
+import RangeSlider from '../rangeSlider/rangeSlider';
 import TimelineCalendar from './calendar';
 import TimelineResults from './results';
 import Config from '../lib/Config';

@@ -40,9 +40,6 @@ const theme = createTheme({
 });
 
 export default function App(props: IProps) {
-
-
-
     Cache.ee.setMaxListeners(100);
     global.config = new Config(props.config);
 
@@ -75,7 +72,6 @@ export default function App(props: IProps) {
 
         return new Promise((resolve, reject) => (
             PresentationApi.get(url).then((currentManifest: IManifestData) =>  {
-
                 if (history) {
                     ManifestHistory.pageChanged(
                         currentManifest.request ?? currentManifest.id,
@@ -202,6 +198,7 @@ export default function App(props: IProps) {
         setCurrentAnnotation, searchResult, setSearchResult, q, setQ: setQ0, cv, setCv: setCv0, line, setLine0, alert, setAlert};
 
     return (
+        <React.StrictMode>
         <Suspense fallback={null}>
             <AppContext.Provider value={appContextValue}>
                 <I18nextProvider i18n={i18n}>
@@ -217,5 +214,6 @@ export default function App(props: IProps) {
                 </I18nextProvider>
             </AppContext.Provider>
         </Suspense>
+        </React.StrictMode>
     );
 }

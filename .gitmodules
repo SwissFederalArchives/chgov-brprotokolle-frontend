@@ -1,3 +1,3 @@
 [submodule "public/md"]
 	path = public/md
-	url = https://github.com/SwissFederalArchives/chgov-brprotokolle-markdown.git
+	url = ssh://git@stash.4eyes.ch:7999/neat/chgov-brprotokolle-markdown.git

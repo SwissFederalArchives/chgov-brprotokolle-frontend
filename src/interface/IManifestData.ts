@@ -26,9 +26,10 @@ export default interface IManifestData {
     transcription: ITranscription[];
     images: IPresentationApiImage[];
     services?: Service[];
+    homepages?: IHomepage[];
 }
 
-export type IPresentationApiItemsType = 'image' | 'audioVideo' | 'pdf' | 'file' | 'plain';
+export type IPresentationApiItemsType = 'image' | 'audioVideo' | 'pdf' | 'file' | 'plain' | 'html';
 
 export interface IPresentationApiImage {
     id: string;
@@ -80,4 +81,11 @@ export interface ISearchService {
 export interface ISeeAlso {
     id: string;
     label?: PropertyValue;
+}
+
+export interface IHomepage {
+    id: string;
+    label: PropertyValue;
+    type: string;
+    format?: string;
 }

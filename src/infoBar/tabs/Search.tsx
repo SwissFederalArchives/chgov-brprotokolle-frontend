@@ -1,12 +1,12 @@
 import React, {useContext, useState, useEffect, useRef} from 'react';
 import './search.css';
-import TextField from '@material-ui/core/TextField';
+import TextField from '@mui/material/TextField';
 import i18next from 'i18next';
 import {AppContext} from "../../AppContext";
-import {CircularProgress} from "@material-ui/core";
+import {CircularProgress} from "@mui/material";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import Autocomplete from '@mui/material/Autocomplete';
 import {debounce} from 'throttle-debounce';
 import fetchAutoCompleteApi, {IAutoCompleteTerms} from "../../fetch/AutoCompleteApi";
 import fetchSearchApi from "../../fetch/SearchApi";
@@ -63,7 +63,9 @@ export default function Search() {
             output.push(
                 <div className={className} key={hit.i}
                      onClick={() => setCurrentAnnotation(hit.resource)}>
-                    <span className="aiiif-search-badge">{i18next.t('common:pageDot')} {hit.resource.page + 1}</span>
+                    <span className="aiiif-search-badge">
+                        <>{i18next.t('common:pageDot')} {hit.resource.page + 1}</>
+                    </span>
 
                     {stripTags(hit.before)} <strong>{hit.match}</strong> {stripTags(hit.after)}
                 </div>
@@ -119,7 +121,7 @@ export default function Search() {
                 renderInput={(params) => (
                     <TextField
                         {...params}
-                        label={i18next.t('common:searchInputLabel')}
+                        label={<>{i18next.t('common:searchInputLabel')}</>}
                         onKeyUp={event => handleEnter(event)}
                         InputProps={{
                             ...params.InputProps,

@@ -4,6 +4,7 @@ import {addBlankTarget, getLocalized, sanitizeRulesSet} from "../../lib/Manifest
 import UrlValidation from "../../lib/UrlValidation";
 import {Translation} from "react-i18next";
 import {AppContext} from "../../AppContext";
+import i18n from "i18next";
 
 interface IProps {
     showLicense?: boolean;
@@ -96,5 +97,54 @@ export default function Metadata(props: IProps) {
         metadataView.push(<img key="providerLogo" className="aiiif-provider-logo" src={logo} alt="Logo" title="Logo"/>);
     }
 
+    for (const homepage of languageFilter(currentManifest.homepages)) {
+        metadataView.push(
+            <a key={Math.random()} href={homepage.id} className="aiiif-download" target="_blank"
+               rel="noopener noreferrer">{getLocalized(homepage.label)}
+            </a>
+        );
+    }
+
+
     return <>{metadataView}</>;
+}
+
+export function languageFilter(data: any[] | undefined): any[] {
+
+    if (!data) {
+        return [];
+    }
+
+    if (data.length === 1) {
+        return data;
+    }
+
+
+    let filtered = data.filter(h => {
+        for (const l of h.label) {
+            if (l._locale === i18n.language) {
+                return true;
+            }
+        }
+        return false;
+    });
+    if (filtered.length > 0) {
+        return filtered;
+    }
+
+    filtered = data.filter(
+        h => {
+            for (const l of h.label) {
+                if (l._locale && l._locale.slice(0, 2) === i18n.language.slice(0, 2)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    );
+    if (filtered.length > 0) {
+        return filtered;
+    }
+
+    return data;
 }

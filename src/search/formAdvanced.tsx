@@ -6,7 +6,7 @@ import Slider from '@material-ui/core/Slider';
 import * as DOMPurify from 'dompurify';
 import CancelIcon from '@material-ui/icons/Cancel';
 
-import RangeSlider from 'rangeSlider/rangeSlider';
+import RangeSlider from '../rangeSlider/rangeSlider';
 import PresentationApi from "../fetch/PresentationApi";
 import { ISearchResults, ISolrRequest } from 'interface/IOcrSearchData';
 import IManifestData from "../interface/IManifestData";
@@ -14,7 +14,7 @@ import { buildManifest } from '../timeline/util';
 import { replaceSearchParameters } from '../util/url';
 import Tooltip from '../tooltip/tooltip';
 import { numberArrayToString, stringToNumberArray } from '../util/misc';
-import { isSolrExpertQuery, isSolrFrequencySortable } from 'util/solr';
+import { isSolrExpertQuery, isSolrFrequencySortable } from '../util/solr';
 
 import Config from '../lib/Config';
 
@@ -237,14 +237,14 @@ class SearchFormAdvanced extends React.Component<IProps, IState> {
                                             className="search-form-tooltip"
                                             title={
                                                 <div dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
-                                                    __html: DOMPurify.sanitize(t('searchAdvancedInputTooltip'))
+                                                    __html: DOMPurify.sanitize(`${t('searchAdvancedInputTooltip')}`)
                                                 }} />
                                             }
                                         />
                                     </div>
                                 </div>
                                 <div className="search-form-fuzzy">
-                                    <span className="search-form-fuzzy-label">{t('searchAdvancedFuzzyFrom')}</span>
+                                    <span className="search-form-fuzzy-label">{`${t('searchAdvancedFuzzyFrom')}`}</span>
                                     <Slider
                                         defaultValue={Number(this.props.fuzzy)}
                                         onChangeCommitted={(ev: any, newValue: number | number[]) => this.setState({ fuzzyFilter: newValue as number })}
@@ -258,7 +258,7 @@ class SearchFormAdvanced extends React.Component<IProps, IState> {
                                         className="search-form-tooltip"
                                         title={
                                             <div dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
-                                                __html: DOMPurify.sanitize(t('searchAdvancedFuzzyTooltip'))
+                                                __html: DOMPurify.sanitize(`${t('searchAdvancedFuzzyTooltip')}`)
                                             }} />
                                         }
                                     />
@@ -296,11 +296,11 @@ class SearchFormAdvanced extends React.Component<IProps, IState> {
                                 {(!isSearchPending && searchResults && queryParams.q) && (
                                     <p className="mdc-typography search-form-info__text"
                                         dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
-                                            __html: DOMPurify.sanitize(t('searchFormFoundMatches', {
+                                            __html: DOMPurify.sanitize(`${t('searchFormFoundMatches', {
                                                 numFound: searchResults?.response?.numFound,
                                                 q: this.state.query,
                                                 QTime: searchResults?.responseHeader?.QTime,
-                                            }))
+                                            })}`)
                                         }}
                                     />
                                 )}

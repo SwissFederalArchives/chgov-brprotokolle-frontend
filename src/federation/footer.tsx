@@ -23,8 +23,8 @@ class FederationFooter extends React.Component<any> {
                                 <span className="hidden-xs">{t('footerTitle')}</span>
                                 <nav className="pull-right">
                                     <ul>
-                                        <li><a href={t('footerTermsAndConditionsLink')}>{t('footerTermsAndConditionsLabel')}</a></li>
-                                        <li><a href={t('footerContactLink')}>{t('footerContactLabel')}</a></li>
+                                        <li><a href={`${t('footerTermsAndConditionsLink')}`}>{t('footerTermsAndConditionsLabel')}</a></li>
+                                        <li><a href={`${t('footerContactLink')}`}>{t('footerContactLabel')}</a></li>
                                     </ul>
                                 </nav>
                             </div>

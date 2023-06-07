@@ -8,7 +8,7 @@ export function useQueryState(name: string, initialValue: string | null = null):
     const history = useHistory()
 
     const setQuery = useCallback(
-        value => {
+        (value: any) => {
             const currentUrl = new URL(window.location.href);
             const existingQueries = qs.parse(currentUrl.search, {
                 ignoreQueryPrefix: true,
