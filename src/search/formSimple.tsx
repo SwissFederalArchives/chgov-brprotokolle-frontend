@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import { withRouter, RouteComponentProps, Link } from 'react-router-dom';
 import { Translation } from 'react-i18next';
-import { LinearProgress } from '@material-ui/core';
+import { LinearProgress } from '@mui/material';
 import { ISearchResults, ISolrRequest } from 'interface/IOcrSearchData';
 import { replaceSearchParameters } from '../util/url';
 import { isSolrFrequencySortable } from '../util/solr';

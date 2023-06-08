@@ -19,7 +19,7 @@ import {AppContext} from "./AppContext";
 import {AnnotationType, HitType} from "./fetch/SearchApi";
 import Main from "./layout/Main";
 import {IAlertContent} from "./Alert";
-import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
+import { ThemeProvider, createTheme } from '@mui/material';
 
 interface IProps {
     config: IConfigParameter;
@@ -205,9 +205,9 @@ export default function App(props: IProps) {
                 <Router>
                     <Translation>
                         {() => (
-                            <MuiThemeProvider theme={theme}>
+                            <ThemeProvider theme={theme}>
                                 <Main />
-                            </MuiThemeProvider>
+                            </ThemeProvider>
                         )}
                     </Translation>
                 </Router>

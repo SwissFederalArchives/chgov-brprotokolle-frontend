@@ -1,8 +1,7 @@
-import { Fade } from '@material-ui/core';
-import { withStyles, Theme } from '@material-ui/core/styles';
-import Tooltip, { TooltipProps } from '@material-ui/core/Tooltip';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Fade, Theme, Tooltip, TooltipProps } from '@mui/material';
+import { withStyles } from '@mui/styles';
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface IProps extends Omit<TooltipProps, 'children'> {
     children?: React.ReactElement<any, any>;
@@ -22,4 +21,4 @@ const defaultProps: Partial<TooltipProps> = {
     placement: 'right',
 };
 
-export default withStyles(styles)((props: IProps) => <Tooltip {...{ ...defaultProps, ...props }}>{props.children || <span><FontAwesomeIcon icon={faInfoCircle} size="lg" color="#069" style={{cursor: 'pointer'}} /></span>}</Tooltip>);
+export default withStyles(styles)((props: IProps) => <Tooltip {...{ ...defaultProps, ...props }}>{props.children ?? <span><FontAwesomeIcon icon={faInfoCircle} size="lg" color="#069" style={{cursor: 'pointer'}} /></span>}</Tooltip>);

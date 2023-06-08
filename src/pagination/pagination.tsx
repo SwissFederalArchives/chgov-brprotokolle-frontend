@@ -1,8 +1,8 @@
 import React from 'react';
 import { Translation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { usePagination, UsePaginationProps } from '@material-ui/lab/Pagination';
 import './pagination.css';
+import { UsePaginationProps, usePagination } from '@material-ui/lab';
 
 interface IProps extends UsePaginationProps {
     rowsPerPage: number,

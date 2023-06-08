@@ -1,10 +1,9 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import { withRouter, RouteComponentProps, Link } from 'react-router-dom';
 import { Translation } from 'react-i18next';
-import { LinearProgress } from '@material-ui/core';
-import Slider from '@material-ui/core/Slider';
+import { LinearProgress, Slider } from '@mui/material';
 import * as DOMPurify from 'dompurify';
-import CancelIcon from '@material-ui/icons/Cancel';
+import { Cancel as CancelIcon } from '@mui/icons-material';
 
 import RangeSlider from '../rangeSlider/rangeSlider';
 import PresentationApi from "../fetch/PresentationApi";
@@ -251,6 +250,7 @@ class SearchFormAdvanced extends React.Component<IProps, IState> {
                                         min={0}
                                         max={2}
                                         step={1}
+                                        size="small"
                                         disabled={isSolrExpertQuery(query)}
                                     />
                                     <span className="search-form-fuzzy-label">{t('searchAdvancedFuzzyTo')}</span>

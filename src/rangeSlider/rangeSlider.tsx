@@ -1,76 +1,76 @@
 import React, { useEffect, useState } from 'react';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import Slider, { Mark } from '@material-ui/core/Slider';
+import { Slider, SliderProps } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles';
 import Cookie from 'universal-cookie';
 
-const useStylesRangeSlider = makeStyles((theme) => ({
-  root: {
-    color: theme.palette.primary.main,
-    height: 2,
-    padding: '15px 0',
-  },
-  thumb: {
-    height: ({ size } : Pick<IProps, 'size'>) => size === 'small' ? 12 : 16,
-    width: ({ size } : Pick<IProps, 'size'>) => size === 'small' ? 12: 16,
-    backgroundColor: theme.palette.primary.main,
-    marginTop: ({ size } : Pick<IProps, 'size'>) => size === 'small' ? -6 : -8,
-    marginLeft: ({ size } : Pick<IProps, 'size'>) => size === 'small' ? -6 : -8,
-    boxShadow: `none`,
+interface StyleProps {
+  size: 'small' | 'medium';
+}
 
+const useStylesRangeSlider = styled(({ size, ...props }: SliderProps & StyleProps) => <Slider {...props} />)(({ theme, size }) => ({
+  color: theme.palette.primary.main,
+  height: 2,
+  padding: '15px 0',
+  '& .MuiSlider-thumb': {
+    height: size === 'small' ? 12 : 16,
+    width: size === 'small' ? 12 : 16,
+    backgroundColor: theme.palette.primary.main,
+    boxShadow: 'none',
     '&::after': {
-      content: '',
+      content: '""',
       position: 'absolute',
-      width: ({ size } : Pick<IProps, 'size'>) => size === 'small' ? 44 : 64,
-      height: ({ size } : Pick<IProps, 'size'>) => size === 'small' ? 44 : 64,
+      width: size === 'small' ? 44 : 64,
+      height: size === 'small' ? 44 : 64,
       borderRadius: '50%',
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      backgroundColor: `${alpha(theme.palette.primary.main, 0.3)}`,
+      backgroundColor: alpha(theme.palette.primary.main, 0.3),
       transition: 'background-color 0.3s ease',
     },
-    '&.MuiSlider-thumb:hover': {
+    '&:hover': {
       '&::after': {
-        backgroundColor: `${alpha(theme.palette.primary.main, 0.15)}`,
+        backgroundColor: alpha(theme.palette.primary.main, 0.15),
       },
     },
-    '&.MuiSlider-thumb.Mui-focusVisible, &.MuiSlider-thumb:hover, &.MuiSlider-active': {
-      boxShadow: `none`,
+    '&.Mui-focusVisible, &:hover, &.Mui-active': {
+      boxShadow: 'none',
     }
   },
-  valueLabel: {
+  '& .MuiSlider-valueLabel': {
     left: 'auto',
-    top: ({ size } : Pick<IProps, 'size'>) => size === 'small' ? -35 : -50,
+    top: size === 'small' ? -15 : -25,
+    background: 'transparent',
     '& *': {
       background: 'transparent',
       color: theme.palette.primary.main,
       fontWeight: 700,
-      fontSize: ({ size } : Pick<IProps, 'size'>) => size === 'small' ? 16 : 22,
+      fontSize: size === 'small' ? 16 : 22,
     },
   },
-  track: {
+  '& .MuiSlider-track': {
     height: 2,
   },
-  rail: {
+  '& .MuiSlider-rail': {
     height: 2,
     opacity: 0.5,
     color: theme.palette.grey[500],
   },
-  mark: {
+  '& .MuiSlider-mark': {
     height: 8,
     width: 1,
     marginTop: -3,
   },
-  markActive: {
+  '& .MuiSlider-markActive': {
     opacity: 1,
     backgroundColor: 'currentColor',
   },
 }));
 
-interface IProps {
+interface IProps extends SliderProps {
   min: number,
   max: number,
-  marks: boolean | Mark[],
+  marks: boolean | SliderProps['marks'],
   value: number[],
   setValue: (a: number[]) => void,
   valueLabelDisplay?: 'on' | 'auto' | 'off';
@@ -84,7 +84,7 @@ const defaultProps = {
 
 export default function RangeSlider(props: IProps & typeof defaultProps) {
   const { min, max, value, setValue, valueLabelDisplay, size } = props;
-  const classes = useStylesRangeSlider({ size});
+  const StyledSlider = useStylesRangeSlider;
   const [innerValue, setInnerValue] = useState<number[]>(value)
   const cookie = new Cookie();
 
@@ -105,8 +105,8 @@ export default function RangeSlider(props: IProps & typeof defaultProps) {
   };
 
   return (
-    <Slider
-      classes={classes}
+    <StyledSlider
+      size={size}
       value={innerValue}
       onChange={handleChange}
       onChangeCommitted={handleChangeCommited}
@@ -116,4 +116,3 @@ export default function RangeSlider(props: IProps & typeof defaultProps) {
     />
   );
 }
-
