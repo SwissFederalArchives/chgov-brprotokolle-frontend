@@ -1,60 +1,69 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Translation } from 'react-i18next';
 import {
+  ISearchResultsType,
   ISearchResults,
   IHighlightDocument,
   IOCRHighlight,
   ISolrRequest,
 } from '../interface/IOcrSearchData';
-import ResultDocument from './resultDocument';
+import { getResultsHighlightingMode } from './util';
+import SearchResultsDocument from './resultsDocument';
+import SearchResultsDocumentOcr from './resultsDocumentOcr';
 
 interface IProps {
-  searchResults: ISearchResults | undefined;
-  queryParams: ISolrRequest;
+  searchField: string;
+  searchQuery: ISolrRequest | null;
+  searchResults: ISearchResults | null;
 }
 
 const SearchResults = (props: IProps) => {
-  const { searchResults, queryParams } = props;
+  const { searchField, searchResults, searchQuery } = props;
+  if (!searchResults || !searchQuery) {
+    return null;
+  }
+  let results: ReactNode | null = null;
+  const highlightingMode = getResultsHighlightingMode(searchResults);
 
-  return (
-    <Translation ns="common">
-      {(t) => (
-        <section className="results">
-          {searchResults?.response.docs
-            .map((doc: IHighlightDocument, idx: number) => {
-              return {
-                doc,
-                key: idx,
-                ocrHl: searchResults.ocrHighlighting[doc.id].ocr_text,
-                hl: {},
-              };
-            })
-            .map(
-              ({
-                doc,
-                key,
-                hl,
-                ocrHl,
-              }: {
-                doc: IHighlightDocument;
-                key: number;
-                hl: {};
-                ocrHl: IOCRHighlight;
-              }) => (
-                <ResultDocument
-                  key={key}
-                  hl={hl}
-                  ocr_hl={ocrHl}
-                  doc={doc}
-                  query={queryParams.q}
-                  snippets={queryParams['hl.snippets']}
-                />
-              )
-            )}
-        </section>
-      )}
-    </Translation>
-  );
+  const renderResults = () => {
+    return (
+      <>
+        {searchResults.response.docs.map((doc: IHighlightDocument, idx: number) => {
+          const hl: string[] = searchResults.highlighting[doc.id][searchField] ?? [];
+          const key = doc.id;
+          const query = searchQuery.q;
+
+          return <SearchResultsDocument key={key} hl={hl} doc={doc} query={query} />;
+        })}
+      </>
+    );
+  };
+
+  const renderOcrResults = () => {
+    return (
+      <>
+        {searchResults.response.docs.map((doc: IHighlightDocument, idx: number) => {
+          const hl: IOCRHighlight = searchResults.ocrHighlighting[doc.id][searchField];
+          const key = doc.id;
+          const query = searchQuery.q;
+          const snippets = parseInt(searchQuery['hl.snippets'], 10);
+
+          return <SearchResultsDocumentOcr key={key} hl={hl} doc={doc} query={query} snippets={snippets} />;
+        })}
+      </>
+    );
+  };
+
+  switch (highlightingMode) {
+    case ISearchResultsType.NORMAL:
+      results = renderResults();
+      break;
+    case ISearchResultsType.OCR:
+      results = renderOcrResults();
+      break;
+  }
+
+  return <Translation ns="common">{(t) => <section className="results">{results}</section>}</Translation>;
 };
 
 export default SearchResults;

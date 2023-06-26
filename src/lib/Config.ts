@@ -61,11 +61,11 @@ class Config {
         this.fuzzySearchDefault = config.fuzzySearchDefault ? config.fuzzySearchDefault : '0';
         this.solrFieldConfig = config.solrFieldConfig ? config.solrFieldConfig : {
             'q': '',
-            'fl': 'id,source,title,date,ocr_text',
-            'qf': 'title^20.0 subtitle^16.0 ocr_text^0.3',
-            'df': 'ocr_text',
+            'fl': 'id,source,title,date',
+            'qf': 'title^20.0 subtitle^16.0 $SEARCHFIELD$^0.3',
+            'df': '$SEARCHFIELD$',
             'hl': 'on',
-            'hl.ocr.fl': 'ocr_text',
+            'hl.ocr.fl': '$SEARCHFIELD$',
             'hl.snippets': '1',
             'hl.weightMatches': 'true',
             'rows': '25',
@@ -75,6 +75,10 @@ class Config {
 
     private readonly availableSearchRows: number[] = [10, 25, 50, 100];
     private readonly availableSearchSorts: string[] = ['score desc', 'date asc', 'date desc', 'frequency'];
+    private readonly selectableYearRangeBySearchMode = {
+        'marginalia_text': [1848, 1903],
+        'decision_number': [1848, 1903],
+    };
 
     getSplitterWidth(folded: boolean) {
 
@@ -174,6 +178,10 @@ class Config {
 
     getOverviewYearSliderDefaultRange() {
         return this.overviewYearSliderDefaultRange;
+    }
+
+    getSelectableYearRangeBySearchMode() {
+        return this.selectableYearRangeBySearchMode;
     }
 
     getSolrFieldConfig() {

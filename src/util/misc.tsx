@@ -1,10 +1,16 @@
 import i18next, { TOptions } from "i18next";
 
-export const stringToNumberArray = (str: string): number[] => {
+export const stringToNumberArray = (str?: string | null): number[] => {
+  if (str === null || str === undefined) {
+    return [];
+  }
   return str.split(',').map((s) => Number(s));
 };
 
-export const numberArrayToString = (arr: number[]): string => {
+export const numberArrayToString = (arr?: number[] | null): string => {
+  if (arr === null || arr === undefined) {
+    return '';
+  }
   return arr.join(',');
 };
 

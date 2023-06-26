@@ -1,4 +1,5 @@
 {
     "singleQuote": true,
-    "htmlWhitespaceSensitivity": "strict"
+    "htmlWhitespaceSensitivity": "strict",
+    "printWidth": 120
   }

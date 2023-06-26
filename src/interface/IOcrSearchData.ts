@@ -45,6 +45,13 @@ export interface ISearchResults {
     }
 }
 
+export const ISearchResultsType = {
+    NORMAL: 'normal',
+    OCR: 'ocr',
+    NONE: 'none',
+} as const;
+
+export type ISearchHighlightingMode = typeof ISearchResultsType[keyof typeof ISearchResultsType];
 export interface ISolrRequest {
     'q': string,
     'fl': string,
@@ -52,7 +59,7 @@ export interface ISolrRequest {
     'qf': string,
     'df': string,
     'hl': string,
-    'hl.ocr.fl': string,
+    'hl.ocr.fl'?: string,
     'hl.fl'?: string,
     'hl.snippets': string,
     'hl.weightMatches': string,

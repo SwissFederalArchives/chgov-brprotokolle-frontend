@@ -2,7 +2,7 @@
     margin-bottom: 2em;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     .pagination-container > span.pull-left {
         float: none!important;
         display: block;
