@@ -2,7 +2,8 @@ import * as React from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import { Translation } from 'react-i18next';
 import Main from '../main/main';
-import logoMobile from '../images/swiss.svg';
+
+const logoMobile = require('../images/swiss.svg').default;
 
 require('./navigation.css');
 

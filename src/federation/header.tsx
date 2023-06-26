@@ -4,7 +4,8 @@ import FederationBreadcrumbs from './breadcrumbs';
 import { Translation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Navigation from '../navigation/navigation';
-import logo from '../images/logo-CH.svg';
+
+const logo = require('../images/logo-CH.svg').default;
 
 require('./header.css');
 class FederationHeader extends React.Component<any> {
