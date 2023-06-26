@@ -37,6 +37,7 @@ export default function ReactMirador() {
         let config = {
             id: `mirador-${id}`,
             createGenerateClassNameOptions: {
+                disableGlobal: true,
                 // Options passed directly to createGenerateClassName in Material-UI https://material-ui.com/styles/api/#creategenerateclassname-options-class-name-generator
                 productionPrefix: `mirador-${id}`,
             },
