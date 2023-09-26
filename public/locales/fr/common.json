@@ -26,7 +26,7 @@
   "zoomReset": "Réinitialiser le zoom",
 
   "headerProjectTitle": "Archives fédérales suisses",
-  "headerProjectSubtitle": "Procès-verbaux du Conseil fédéral (1848-1963)",
+  "headerProjectSubtitle": "Procès-verbaux du Conseil fédéral (1848-1972)",
   "footerTitle": "Archives fédérales suisses BAR",
   "footerTermsAndConditionsLabel": "Avis juridiques",
   "footerTermsAndConditionsLink": "https://www.admin.ch/gov/fr/accueil/conditions-utilisation.html",
@@ -38,7 +38,7 @@
   "navItemManual": "Aide",
   "navItemInformation": "Information",
 
-  "pageTitle": "Procès-verbaux du Conseil fédéral (1848-1963) - {{individual}}",
+  "pageTitle": "Procès-verbaux du Conseil fédéral (1848-1972) - {{individual}}",
   "pageTitleIndividualBrowser": "Répertoire chronologique",
   "pageTitleIndividualSearch": "Recherche",
   "pageTitleIndividualManual": "Aide",
@@ -59,7 +59,7 @@
   "searchFormOrderBy_score desc": "Pertinence",
   "searchFormOrderBy_frequency": "Nombre de résultats",
   "searchResultsMatchingPassages": "{{amount}} passages concordants trouvés dans le texte",
-  "searchIntroductionText":"La page <span class=\"italic\">Procès-verbaux du Conseil fédéral (1848-1963)</span> vous permet d’effectuer une recherche par mot-clé dans les procès-verbaux manuscrits et dactylographiés du Conseil fédéral. ",
+  "searchIntroductionText":"La page <span class=\"italic\">Procès-verbaux du Conseil fédéral (1848-1972)</span> vous permet d’effectuer une recherche par mot-clé dans les procès-verbaux manuscrits et dactylographiés du Conseil fédéral. ",
 
   "searchAdvancedInputLabel": "Recherche",
   "searchAdvancedInputTooltip": "<p>Utilisez les opérateurs booléens (AND, OR, NOT) pour relier les mots-clés entre eux.</p>",

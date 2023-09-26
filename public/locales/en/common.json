@@ -26,7 +26,7 @@
   "zoomReset": "Reset zoom",
 
   "headerProjectTitle": "Swiss Federal Archives",
-  "headerProjectSubtitle": "Minutes of the Federal Council (1848-1963)",
+  "headerProjectSubtitle": "Minutes of the Federal Council (1848-1972)",
   "footerTitle": "Swiss Federal Archives SFA",
   "footerTermsAndConditionsLabel": "Legal framework",
   "footerTermsAndConditionsLink": "https://www.admin.ch/gov/en/start/terms-and-conditions.html",
@@ -38,7 +38,7 @@
   "navItemManual": "Help",
   "navItemInformation": "Information",
 
-  "pageTitle": "Minutes of the Federal Council (1848-1963) - {{individual}}",
+  "pageTitle": "Minutes of the Federal Council (1848-1972) - {{individual}}",
   "pageTitleIndividualBrowser": "Chronological index",
   "pageTitleIndividualSearch": "Search",
   "pageTitleIndividualManual": "Help",
@@ -59,7 +59,7 @@
   "searchFormOrderBy_score desc": "Relevance",
   "searchFormOrderBy_frequency": "Number of hits",
   "searchResultsMatchingPassages": "Found {{amount}} matching passages in the document.",
-  "searchIntroductionText":"On the “Minutes of the Federal Council (1848–1963)” page, you can search both the handwritten and typewritten minutes of Federal Council decisions using search terms. ",
+  "searchIntroductionText":"On the “Minutes of the Federal Council (1848–1972)” page, you can search both the handwritten and typewritten minutes of Federal Council decisions using search terms. ",
 
   "searchAdvancedInputLabel": "Search",
   "searchAdvancedInputTooltip": "<p>Use the Boolean operators (AND, OR, NOT) to connect search terms.</p>",

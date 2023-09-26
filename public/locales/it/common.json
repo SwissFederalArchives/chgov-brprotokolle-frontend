@@ -26,7 +26,7 @@
   "zoomReset": "Resetta la vista",
 
   "headerProjectTitle": "Archivio federale svizzero",
-  "headerProjectSubtitle": "Verbali del Consiglio federale (1848-1963)",
+  "headerProjectSubtitle": "Verbali del Consiglio federale (1848-1972)",
   "footerTitle": "Archivio federale svizzero BAR",
   "footerTermsAndConditionsLabel": "Informazioni legali",
   "footerTermsAndConditionsLink": "https://www.admin.ch/gov/it/pagina-iniziale/basi-legali.html",
@@ -38,7 +38,7 @@
   "navItemManual": "Aiuto",
   "navItemInformation": "Informazioni",
 
-  "pageTitle": "Verbali del Consiglio federale (1848-1963) - {{individual}}",
+  "pageTitle": "Verbali del Consiglio federale (1848-1972) - {{individual}}",
   "pageTitleIndividualBrowser": "Elenco cronologico",
   "pageTitleIndividualSearch": "Ricerca",
   "pageTitleIndividualManual": "Aiuto",
@@ -59,7 +59,7 @@
   "searchFormOrderBy_score desc": "Rilevanza",
   "searchFormOrderBy_frequency": "Numero di risultati",
   "searchResultsMatchingPassages": "{{amount}} che corrisponde a passaggi trovati nel testo",
-  "searchIntroductionText": "Sulla pagina «Verbali del Consiglio federale (1848-1963)» si possono effettuare ricerche mediante parole chiave nei verbali manoscritti e dattiloscritti delle decisioni del Consiglio federale.",
+  "searchIntroductionText": "Sulla pagina «Verbali del Consiglio federale (1848-1972)» si possono effettuare ricerche mediante parole chiave nei verbali manoscritti e dattiloscritti delle decisioni del Consiglio federale.",
 
   "searchAdvancedInputLabel": "Cerca",
   "searchAdvancedInputTooltip": "<p>Per concatenare i termini cercati si possono usare gli operatori logici (AND, OR, NOT)</p>",
