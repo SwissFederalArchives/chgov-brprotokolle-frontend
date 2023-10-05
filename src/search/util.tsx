@@ -24,7 +24,7 @@ export const prepareSolrSearchQuery = (
   const realSearchField = searchMode === 'advanced' ? searchField : SEARCH_FIELD_FULL_TEXT;
 
   // If the query is not a Solr expert query, append fuzzy filter
-  if (query && !isSolrExpertQuery(query)) {
+  if (query && !isSolrExpertQuery(query) && fuzzy > 0) {
     // wrap each word in query in ~fuzzy
     params.q = query
       .split(' ')
