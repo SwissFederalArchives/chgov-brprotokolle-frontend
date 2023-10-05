@@ -20,6 +20,7 @@ interface IProps {
 const SearchFormSimple = (props: IProps) => {
   const { errors, fetching, initialValues, resultsInfo, onSubmit } = props;
   const [query, setQuery] = useState<string>(initialValues.query);
+  const [internalQuery, setInternalQuery] = useState<string>(initialValues.query);
 
   const handleSubmit = (e?: SyntheticEvent) => {
     e?.preventDefault();
@@ -32,7 +33,6 @@ const SearchFormSimple = (props: IProps) => {
       query,
     });
   };
-
 
   return (
     <Translation ns="common">
@@ -50,8 +50,11 @@ const SearchFormSimple = (props: IProps) => {
                         errors.find((err) => err === '400BadSolrRequest') ? 'is-invalid' : ''
                       }`}
                       disabled={fetching}
-                      value={query}
-                      onChange={(ev) => setQuery(ev.currentTarget.value.trim())}
+                      value={internalQuery}
+                      onChange={(ev) => {
+                        setQuery(ev.currentTarget.value.trim());
+                        setInternalQuery(ev.currentTarget.value);
+                      }}
                     ></input>
                     <div className="mdc-linear-progress-wrap">
                       {fetching && <LinearProgress className="mdc-linear-progress" />}
@@ -78,7 +81,7 @@ const SearchFormSimple = (props: IProps) => {
             </div>
             <div className="search-form-info">
               <p className="mdc-typography search-form-info__link">
-                <Link to={`?searchMode=advanced${resultsInfo?.query ? `&q=${resultsInfo.query}`: ''}`}>
+                <Link to={`?searchMode=advanced${resultsInfo?.query ? `&q=${resultsInfo.query}` : ''}`}>
                   {t(`searchAdvancedOpen`)}
                 </Link>
               </p>
