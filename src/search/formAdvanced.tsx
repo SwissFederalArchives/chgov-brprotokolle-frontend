@@ -37,6 +37,7 @@ interface IProps {
 const SearchFormAdvanced = (props: IProps) => {
   const { errors, fetching, initialValues, resultsInfo, onSubmit } = props;
   const [query, setQuery] = useState<string>(initialValues.query);
+  const [internalQuery, setInternalQuery] = useState<string>(initialValues.query);
   const [fuzzy, setFuzzy] = useState<number>(initialValues.fuzzy);
   const [searchField, setSearchField] = useState<string>(initialValues.searchField);
   const [yearRange, setYearRange] = useState<number[]>(initialValues.yearRange);
@@ -49,6 +50,8 @@ const SearchFormAdvanced = (props: IProps) => {
     if (query === '') {
       return;
     }
+
+    setInternalQuery(query);
 
     onSubmit({
       query,
@@ -98,12 +101,13 @@ const SearchFormAdvanced = (props: IProps) => {
                   <div className="search-form-input-inner">
                     <input
                       type="text"
-                      className={`form-control ${
-                        errors.find((err) => err === 'SyntaxError') ? 'is-invalid' : ''
-                      }`}
+                      className={`form-control ${errors.find((err) => err === 'SyntaxError') ? 'is-invalid' : ''}`}
                       disabled={fetching}
-                      value={query}
-                      onChange={(ev) => setQuery(ev.currentTarget.value.trim())}
+                      value={internalQuery}
+                      onChange={(ev) => {
+                        setQuery(ev.currentTarget.value.trim());
+                        setInternalQuery(ev.currentTarget.value);
+                      }}
                     ></input>
                     <div className="mdc-linear-progress-wrap">
                       {fetching && <LinearProgress className="mdc-linear-progress" />}

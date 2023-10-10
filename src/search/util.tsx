@@ -20,7 +20,7 @@ export const prepareSolrSearchQuery = (
     rows: String(rows),
   };
   if (query === '') return null;
-  
+
   const realSearchField = searchMode === 'advanced' ? searchField : SEARCH_FIELD_FULL_TEXT;
 
   // If the query is not a Solr expert query, append fuzzy filter
@@ -52,27 +52,27 @@ export const prepareSolrSearchQuery = (
       params.start = String(page);
     }
 
-    // Handle sort parameter
-    if (sort === 'frequency') {
-      const termfrequency = `termfreq(${realSearchField},'${query}')`;
-
-      // If query is sortable by frequency, set sort parameters
-      if (query && isSolrFrequencySortable(query)) {
-        params.fl += `,freq:${termfrequency}`;
-        params.sort = `${termfrequency} desc`;
-      } else {
-        delete params.sort;
-      }
-    } else if (!['relevance'].includes(sort)) {
-      // Handle other sorts
-      params.sort = sort;
-    } else {
-      delete params.sort;
-    }
-
     if (realSearchField !== SEARCH_FIELD_FULL_TEXT) {
       delete params['hl.ocr.fl'];
     }
+  }
+
+  // Handle sort parameter
+  if (sort === 'frequency') {
+    const termfrequency = `termfreq(${realSearchField},'${query}')`;
+
+    // If query is sortable by frequency, set sort parameters
+    if (query && isSolrFrequencySortable(query)) {
+      params.fl += `,freq:${termfrequency}`;
+      params.sort = `${termfrequency} desc`;
+    } else {
+      delete params.sort;
+    }
+  } else if (!['relevance'].includes(sort)) {
+    // Handle other sorts
+    params.sort = sort;
+  } else {
+    delete params.sort;
   }
 
   // Replace $SEARCHFIELD$ with the actual textField in the whole params object

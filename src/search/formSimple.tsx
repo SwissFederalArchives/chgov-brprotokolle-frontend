@@ -29,6 +29,8 @@ const SearchFormSimple = (props: IProps) => {
       return;
     }
 
+    setInternalQuery(query);
+
     onSubmit({
       query,
     });
