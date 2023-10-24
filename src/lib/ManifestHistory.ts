@@ -35,9 +35,9 @@ class ManifestHistory {
         if (line) {
             url += '&line=' + line;
         }
-
+        // prepend current url without parameters to 'url'
+        url = window.location.href.split('?')[0] + url;
         window.history.pushState({}, label, url);
-
     }
 
     static goBack() {
