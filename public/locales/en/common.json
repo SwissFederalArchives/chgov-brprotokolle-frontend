@@ -59,7 +59,7 @@
   "searchFormOrderBy_score desc": "Relevance",
   "searchFormOrderBy_frequency": "Number of hits",
   "searchResultsMatchingPassages": "Found {{amount}} matching passages in the document.",
-  "searchIntroductionText":"On the “Minutes of the Federal Council (1848–1972)” page, you can search both the handwritten and typewritten minutes of Federal Council decisions using search terms. ",
+  "searchIntroductionText": "On the “Minutes of the Federal Council (1848–1972)” page, you can search both the handwritten and typewritten minutes of Federal Council decisions using search terms. ",
 
   "searchAdvancedInputLabel": "Search",
   "searchAdvancedInputTooltip": "<p>Use the Boolean operators (AND, OR, NOT) to connect search terms.</p>",
@@ -91,5 +91,9 @@
   "timelineResultsTitle": "Protocol",
   "timelineResultsArchiveLink": "Archive",
 
+  "ocrCorrectionTooltip": "Report error",
+  "ocrCorrectionSubject": "Improvement to OCR text",
+  "ocrCorrectionBody": "My suggested correction: \n\n\"{{text}}\"\n\n-----\n\nPage:\n{{url}}\n\n{{metadata}}\nReference code: {{signature}}\nPage: {{page}}\nLine:\n\n\"{{text}}\"\n\n-----\n",
+  
   "errors.1663765178": "The search could not be performed."
 }

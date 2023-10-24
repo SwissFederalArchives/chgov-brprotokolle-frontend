@@ -9,7 +9,7 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@4eyes/mirador-ocr-helper": "^1.2.2",
+    "@4eyes/mirador-ocr-helper": "^2.0.2",
     "@blueprintjs/core": "^3.50.4",
     "@blueprintjs/icons": "^3.30.2",
     "@emotion/react": "^11.10.4",

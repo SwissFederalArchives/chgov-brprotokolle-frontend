@@ -91,5 +91,9 @@
   "timelineResultsTitle": "Protokoll",
   "timelineResultsArchiveLink": "Archiv",
 
+  "ocrCorrectionTooltip": "Fehler melden",
+  "ocrCorrectionSubject": "Verbesserung OCR-Text",
+  "ocrCorrectionBody": "Mein Korrekturvorschlag: \n\n\"{{text}}\"\n\n-----\n\nBetroffene Seite:\n{{url}}\n\n{{metadata}}\nSignatur: {{signature}}\nSeite: {{page}}\nZeile:\n\n\"{{text}}\"\n\n-----\n",
+
   "errors.1663765178": "Die Suche konnte nicht ausgeführt werden."
 }

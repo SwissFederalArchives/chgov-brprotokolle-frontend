@@ -91,5 +91,9 @@
   "timelineResultsTitle": "Protocollo",
   "timelineResultsArchiveLink": "Archivio",
 
+  "ocrCorrectionTooltip": "Segnala errore",
+  "ocrCorrectionSubject": "Correzione del testo OCR",
+  "ocrCorrectionBody": "La mia correzione proposta:\n\n\"{{text}}\"\n\n-----\n\nPagina:\n{{url}}\n\n{{metadata}}\nSegnatura: {{signature}}\nPagina: {{page}}\nRiga:\n\n\"{{text}}\"\n\n-----\n",
+
   "errors.1663765178": "La ricerca non ha potuto essere eseguita."
 }

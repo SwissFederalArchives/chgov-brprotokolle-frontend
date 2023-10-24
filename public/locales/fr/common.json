@@ -59,7 +59,7 @@
   "searchFormOrderBy_score desc": "Pertinence",
   "searchFormOrderBy_frequency": "Nombre de résultats",
   "searchResultsMatchingPassages": "{{amount}} passages concordants trouvés dans le texte",
-  "searchIntroductionText":"La page <span class=\"italic\">Procès-verbaux du Conseil fédéral (1848-1972)</span> vous permet d’effectuer une recherche par mot-clé dans les procès-verbaux manuscrits et dactylographiés du Conseil fédéral. ",
+  "searchIntroductionText": "La page <span class=\"italic\">Procès-verbaux du Conseil fédéral (1848-1972)</span> vous permet d’effectuer une recherche par mot-clé dans les procès-verbaux manuscrits et dactylographiés du Conseil fédéral. ",
 
   "searchAdvancedInputLabel": "Recherche",
   "searchAdvancedInputTooltip": "<p>Utilisez les opérateurs booléens (AND, OR, NOT) pour relier les mots-clés entre eux.</p>",
@@ -90,6 +90,10 @@
   "timelineResultsDateFormat": "DD.MM.YYYY",
   "timelineResultsTitle": "Protocole",
   "timelineResultsArchiveLink": "Archives",
+
+  "ocrCorrectionTooltip": "Signaler une erreur",
+  "ocrCorrectionSubject": "Amélioration texte OCR",
+  "ocrCorrectionBody": "Ma proposition de correction : \n\n\"{{text}}\"\n\n-----\n\nPage concernée :\n{{url}}\n\n{{metadata}}\nCote : {{signature}}\nPage : {{page}}\nLigne:\n\n\"{{text}}\"\n\n-----\n",
 
   "errors.1663765178": "La recherche n’a pas pu être exécutée."
 }
