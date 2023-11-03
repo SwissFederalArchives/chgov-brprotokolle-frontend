@@ -26,9 +26,12 @@ export default function ReactMirador() {
   const { currentManifest } = useContext(AppContext);
   const { searchParams } = new URL(window.location.href);
   const canvasImageName = searchParams.has('cv') ? searchParams.get('cv') : '';
+  const searchQuery = searchParams.has('q') ? searchParams.get('q') : '';
   const collectionParts = canvasImageName?.split('-');
   const collectionName = collectionParts ? collectionParts[0] : '';
-  const canvasId = `${process.env.REACT_APP_IMAGE_API_BASE}/${collectionName}%2F${canvasImageName}.jpg`;
+  const canvasId = canvasImageName
+    ? `${process.env.REACT_APP_IMAGE_API_BASE}/${collectionName}%2F${canvasImageName}.jpg`
+    : undefined;
   const availableLanguages = global.config.getTranslations();
   const isMobileHandler = (event: any) => setIsMobile(event.matches);
 
@@ -172,63 +175,48 @@ export default function ReactMirador() {
     // Every time the currentManifest changes, we need to update the mirador windows to display the new manifest
     if (viewerInstance && currentManifest) {
       const { store } = viewerInstance;
-      const searchUrl = `${process.env.REACT_APP_MANIFEST_SEARCH_URL}/${collectionName}?q=${searchParams.get('q')}`;
       const windows = Object.values(store.getState().windows);
       let firstWindow: any = windows.length > 0 ? windows[0] : null;
       let companionWindowId: string = '';
 
       // If there is no window yet, we need to create one
       if (!firstWindow) {
-        store.dispatch(actions.addWindow({ manifestId: currentManifest.id }));
+        const window = {
+          manifestId: currentManifest.id,
+          defaultSearchQuery: searchQuery,
+          canvasId: !searchQuery ? canvasId : undefined, // Only preselect the canvas if a search query is not available. In case the search query is available, the canvas will be set after the search has been performed.
+        };
+        store.dispatch(actions.addWindow(window));
         firstWindow = Object.values(store.getState().windows)[0];
         store.dispatch(actions.maximizeWindow(firstWindow.id));
       } else {
-        store.dispatch(actions.updateWindow(firstWindow.id, { manifestId: currentManifest.id }));
+        store.dispatch(actions.updateWindow(firstWindow.id, window));
       }
-      // After the window has been created or updated, we check for search parameters and open the companion window 'search' if necessary.
-      if (searchParams.has('q')) {
-        firstWindow = Object.values(store.getState().windows)[0];
+
+      // After the window has been created or updated, we need to manually reset the canvas to the
+      if (canvasId && searchQuery) {
         companionWindowId = selectors.getCompanionWindowIdsForPosition(store.getState(), {
           position: 'left',
           windowId: firstWindow.id,
         })[0];
 
-        // Open the companion window 'search'
-        store.dispatch(
-          actions.addOrUpdateCompanionWindow(firstWindow.id, {
-            content: 'search',
-            position: 'left',
-          })
-        );
-        // Perform the search
-        store.dispatch(actions.fetchSearch(firstWindow.id, companionWindowId, searchUrl, searchParams.get('q')));
-
         // Info: Unfortunately, there is no other way to listen if the search has been performed...
         // Subscribe to the redux store to get notified when the search results are available
         const unsubscribe: Function = store.subscribe(async () => {
-          const searchIsCompleted = Object.values(store.getState().searches).some((search: any) =>
-            Object.values(search).some(
-              (s: any) => !s?.data[searchUrl]?.isFetching && !!s?.selectedContentSearchAnnotationIds
-            )
-          );
-
-          if (searchIsCompleted) {
+          const searchHits = selectors.getSortedSearchHitsForCompanionWindow(store.getState(), {
+            companionWindowId,
+            windowId: firstWindow.id,
+          });
+          if (searchHits.length > 0) {
             await unsubscribe();
-
-            // The timeout is necessary, to make sure the is canvas changed effectively
             setTimeout(() => {
               store.dispatch(actions.setCanvas(firstWindow.id, canvasId));
             }, 150);
           }
         });
-      } else if (searchParams.has('cv')) {
-        // If there is no search parameter, but a canvas id, we need to set the canvas
-        setTimeout(() => {
-          store.dispatch(actions.setCanvas(firstWindow.id, canvasId));
-        }, 150);
       }
     }
-  }, [viewerInstance, currentManifest]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [viewerInstance, currentManifest, canvasId, searchQuery]); // eslint-disable-line react-hooks/exhaustive-deps
 
   /**
    * This method is executed when the component is mounted and when the window size changes
