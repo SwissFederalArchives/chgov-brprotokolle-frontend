@@ -10,13 +10,14 @@ declare let global: {
 };
 
 interface IProps {
+  searchField: string;
   onSubmit: ({ page, rows, sort }: { page?: number; rows: number; sort: string }) => void;
   query: string;
   initialValues: { rows: number; sort: string };
 }
 
 const SearchSorting = (props: IProps) => {
-  const { onSubmit, query, initialValues } = props;
+  const { onSubmit, query, initialValues, searchField } = props;
   const availableRows = global.config.getAvailableSearchRows();
   const availableSorts = global.config.getAvailableSearchSorts();
   const [rows, setRows] = useState<number>(initialValues.rows);
@@ -46,7 +47,7 @@ const SearchSorting = (props: IProps) => {
           <label>{i18next.t('searchFormOrderBy')}</label>
           <select className="form-control" value={sort} onChange={(ev) => setSort(ev.currentTarget.value)}>
             {availableSorts.map((value) => {
-              const disabled = value === 'frequency' && !isSolrFrequencySortable(query);
+              const disabled = value === 'frequency' && !isSolrFrequencySortable(query, searchField);
               return (
                 <option key={value} value={value} disabled={disabled}>
                   {i18next.t(`searchFormOrderBy_${value}`)}

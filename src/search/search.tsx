@@ -20,7 +20,6 @@ declare let global: {
 
 export const SEARCH_FIELD_FULL_TEXT = 'ocr_text';
 export const SEARCH_FIELD_MARGINALIA = 'marginalia_text';
-export const SEARCH_FIELD_DECISION_NUMBER = 'decision_number';
 
 const Search = () => {
   const defaultSolrFieldConfig = global.config.getSolrFieldConfig();
@@ -132,6 +131,14 @@ const Search = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchMode, query]);
 
+  // Reset sort if search field is changed and the current sort is not valid for the new search field
+  useEffect(() => {
+    if (searchField === SEARCH_FIELD_MARGINALIA && sort === 'frequency') {
+      setSort('score desc');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchField]);
+
   return (
     <Translation ns="common">
       {(t) => (
@@ -155,7 +162,14 @@ const Search = () => {
             />
           )}
 
-          {numFound > 0 && <SearchSorting initialValues={{ rows, sort }} query={query} onSubmit={setQueryState} />}
+          {numFound > 0 && (
+            <SearchSorting
+              initialValues={{ rows, sort }}
+              query={query}
+              onSubmit={setQueryState}
+              searchField={searchField}
+            />
+          )}
           {totalPages > 1 && (
             <Pagination
               page={page}

@@ -62,7 +62,7 @@ export const prepareSolrSearchQuery = (
     const termfrequency = `termfreq(${realSearchField},'${query}')`;
 
     // If query is sortable by frequency, set sort parameters
-    if (query && isSolrFrequencySortable(query)) {
+    if (query && isSolrFrequencySortable(query, searchField)) {
       params.fl += `,freq:${termfrequency}`;
       params.sort = `${termfrequency} desc`;
     } else {

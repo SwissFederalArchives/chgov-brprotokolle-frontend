@@ -1,3 +1,4 @@
+import { SEARCH_FIELD_MARGINALIA } from "../search/search";
 
 const SOLR_ESCAPE_CHAR = '\\';
 
@@ -33,6 +34,6 @@ export function isSolrExpertQuery(query: string): boolean {
 /**
  * Detects whether a query allows sorting by frequency
  */
-export function isSolrFrequencySortable(query: string): boolean {
-    return !(isSolrExpertQuery(query) || SOLR_WHITESPACE_CHARS.some((char) => query.includes(char)));
+export function isSolrFrequencySortable(query: string, searchField: string): boolean {
+    return searchField !== SEARCH_FIELD_MARGINALIA && !(isSolrExpertQuery(query) || SOLR_WHITESPACE_CHARS.some((char) => query.includes(char)));
 }

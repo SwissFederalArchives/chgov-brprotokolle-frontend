@@ -14,7 +14,7 @@ import RangeSlider from '../rangeSlider/rangeSlider';
 import { isSolrExpertQuery } from '../util/solr';
 import { buildManifest } from '../timeline/util';
 
-import { SEARCH_FIELD_DECISION_NUMBER, SEARCH_FIELD_MARGINALIA } from './search';
+import { SEARCH_FIELD_MARGINALIA } from './search';
 
 import Config from '../lib/Config';
 
@@ -179,27 +179,6 @@ const SearchFormAdvanced = (props: IProps) => {
                                 dangerouslySetInnerHTML={{
                                   // eslint-disable-line react/no-danger
                                   __html: DOMPurify.sanitize(`${t('searchAdvancedModeMarginaliaTooltip')}`),
-                                }}
-                              />
-                            }
-                          />
-                        </Stack>
-                      }
-                      sx={{ mb: -1 }}
-                    />
-                    <FormControlLabel
-                      value={SEARCH_FIELD_DECISION_NUMBER}
-                      control={<Radio />}
-                      label={
-                        <Stack direction="row" spacing={1.5}>
-                          <span>{t('searchAdvancedModeDecisionNumber')}</span>
-                          <Tooltip
-                            className="search-form-tooltip"
-                            title={
-                              <div
-                                dangerouslySetInnerHTML={{
-                                  // eslint-disable-line react/no-danger
-                                  __html: DOMPurify.sanitize(`${t('searchAdvancedModeDecisionNumberTooltip')}`),
                                 }}
                               />
                             }
