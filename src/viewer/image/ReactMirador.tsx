@@ -3,6 +3,7 @@ import i18next from 'i18next';
 import './mirador.css';
 
 import Mirador from 'mirador';
+import { v4 as uuid } from 'uuid';
 import ocrHelperPlugin from '@4eyes/mirador-ocr-helper';
 // https://github.com/ProjectMirador/mirador/commit/2759fccc641b40b9fff0b9da5ef83d6ecd0e3dd2#diff-90d821e4b96f948716bc831f305dea317c3c9e49c8270798d85017859044de0c
 //@ts-ignore
@@ -20,7 +21,7 @@ declare let global: {
 const MOBILE_BREAKPOINT = 600;
 
 export default function ReactMirador() {
-  const id = useRef<number>(Math.floor(Math.random() * 10000)).current.toString(10);
+  const id = uuid();
   const [viewerInstance, setViewerInstance] = useState<any>(null);
   const [isMobile, setIsMobile] = useState<boolean>(window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches);
   const { currentManifest } = useContext(AppContext);
@@ -34,13 +35,14 @@ export default function ReactMirador() {
     : undefined;
   const availableLanguages = global.config.getTranslations();
   const isMobileHandler = (event: any) => setIsMobile(event.matches);
+  let canvasTimeout: any = null;
 
   useEffect(() => {
     // Initializing Mirador
     let config = {
       id: `mirador-${id}`,
       createGenerateClassNameOptions: {
-        disableGlobal: true,
+        seed: `mirador-${id}-`,
         // Options passed directly to createGenerateClassName in Material-UI https://material-ui.com/styles/api/#creategenerateclassname-options-class-name-generator
         productionPrefix: `mirador-${id}`,
       },
@@ -195,6 +197,7 @@ export default function ReactMirador() {
 
       // After the window has been created or updated, we need to manually reset the canvas to the
       if (canvasId && searchQuery) {
+        firstWindow = Object.values(store.getState().windows)[0];
         companionWindowId = selectors.getCompanionWindowIdsForPosition(store.getState(), {
           position: 'left',
           windowId: firstWindow.id,
@@ -209,11 +212,17 @@ export default function ReactMirador() {
           });
           if (searchHits.length > 0) {
             await unsubscribe();
-            setTimeout(() => {
+            canvasTimeout = setTimeout(() => {
+              firstWindow = Object.values(store.getState().windows)[0];
               store.dispatch(actions.setCanvas(firstWindow.id, canvasId));
             }, 150);
           }
         });
+      }
+    }
+    return () => {
+      if (canvasTimeout) {
+        clearTimeout(canvasTimeout);
       }
     }
   }, [viewerInstance, currentManifest, canvasId, searchQuery]); // eslint-disable-line react-hooks/exhaustive-deps
