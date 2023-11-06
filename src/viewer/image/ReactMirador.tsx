@@ -92,8 +92,10 @@ export default function ReactMirador() {
       theme: {
         overrides: {
           MuiButtonBase: {
-            selected: {
-              backgroundColor: 'transparent',
+            root: {
+              '&$selected': {
+                backgroundColor: 'transparent',
+              },
             },
           },
           MuiListItem: {
@@ -115,6 +117,13 @@ export default function ReactMirador() {
               },
             },
           },
+          MuiTooltip: {
+            popper: {
+              '& > div': {
+                fontSize: '0.9rem!important',
+              },
+            },
+          },
           MuiChip: {
             outlinedSecondary: {
               color: '#069',
@@ -122,6 +131,14 @@ export default function ReactMirador() {
             },
             deleteIconOutlinedColorSecondary: {
               color: '#069',
+            },
+          },
+          MuiTab: {
+            root: {
+              '&$selected': {
+                color: '#666666!important',
+                borderColor: 'currentColor',
+              },
             },
           },
         },
