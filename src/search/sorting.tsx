@@ -19,7 +19,7 @@ interface IProps {
 const SearchSorting = (props: IProps) => {
   const { onSubmit, query, initialValues, searchField } = props;
   const availableRows = global.config.getAvailableSearchRows();
-  const availableSorts = global.config.getAvailableSearchSorts();
+  const availableSorts = global.config.getAvailableSearchSortsBySearchField(searchField);
   const [rows, setRows] = useState<number>(initialValues.rows);
   const [sort, setSort] = useState<string>(initialValues.sort);
 

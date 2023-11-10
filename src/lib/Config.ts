@@ -1,6 +1,7 @@
 import TouchDetection from './TouchDetection';
 import IConfigParameter from '../interface/IConfigParameter';
 import { ISolrRequest } from '../interface/IOcrSearchData';
+import { SEARCH_FIELD_FULL_TEXT, SEARCH_FIELD_MARGINALIA } from '../search/search';
 
 class Config {
 
@@ -74,10 +75,12 @@ class Config {
     }
 
     private readonly availableSearchRows: number[] = [10, 25, 50, 100];
-    private readonly availableSearchSorts: string[] = ['score desc', 'date asc', 'date desc', 'frequency'];
+    private readonly availableSearchSortsBySearchField: Record<string, string[]> = {
+        [SEARCH_FIELD_FULL_TEXT]: ['score desc', 'date asc', 'date desc', 'frequency'],
+        [SEARCH_FIELD_MARGINALIA]: ['score desc', 'date asc', 'date desc'],
+    };
     private readonly selectableYearRangeBySearchMode = {
         'marginalia_text': [1848, 1903],
-        'decision_number': [1848, 1903],
     };
 
     getSplitterWidth(folded: boolean) {
@@ -196,8 +199,8 @@ class Config {
         return this.availableSearchRows;
     }
 
-    getAvailableSearchSorts() {
-        return this.availableSearchSorts;
+    getAvailableSearchSortsBySearchField(searchField: string) {
+        return this.availableSearchSortsBySearchField[searchField];
     }
 }
 
