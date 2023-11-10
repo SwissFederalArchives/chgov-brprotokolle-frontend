@@ -1,6 +1,6 @@
 {
   "name": "@archival-iiif/viewer-react",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "license": "MIT",
   "homepage": ".",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@4eyes/mirador-ocr-helper": "^2.0.4",
+    "@4eyes/mirador-ocr-helper": "^2.0.5",
     "@blueprintjs/core": "^3.50.4",
     "@blueprintjs/icons": "^3.30.2",
     "@emotion/react": "^11.10.4",
