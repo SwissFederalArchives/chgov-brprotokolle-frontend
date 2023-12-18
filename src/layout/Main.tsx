@@ -49,21 +49,21 @@ export default function Main() {
             <FederationHeader />
             <Switch>
                 <Route exact path="/">
-                    <Redirect to="/search" />
+                    <Redirect to="/search/" />
                 </Route>
-                <Route path="/search">
+                <Route path="/search/">
                     <PageSearch />
                 </Route>
-                <Route path="/browser">
+                <Route path="/browser/">
                     <PageOverview />
                 </Route>
-                <Route path="/protocol">
+                <Route path="/protocol/">
                     <PageProtocolVariant3 />
                 </Route>
-                <Route path="/manual">
+                <Route path="/manual/">
                     <PageManual />
                 </Route>
-                <Route path="/information">
+                <Route path="/information/">
                     <PageInformation />
                 </Route>
                 <Route path="*">

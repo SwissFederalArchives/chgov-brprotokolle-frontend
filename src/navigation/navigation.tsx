@@ -9,19 +9,19 @@ require('./navigation.css');
 
 export const menuItems = [
     {
-        to: '/search',
+        to: '/search/',
         name: 'Search',
     },
     {
-        to: '/browser',
+        to: '/browser/',
         name: 'Overview'
     },
     {
-        to: '/manual',
+        to: '/manual/',
         name: 'Manual'
     },
     {
-        to: '/information',
+        to: '/information/',
         name: 'Information'
     },
 ];
