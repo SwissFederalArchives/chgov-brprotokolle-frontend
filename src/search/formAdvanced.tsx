@@ -4,6 +4,7 @@ import { Translation } from 'react-i18next';
 import * as DOMPurify from 'dompurify';
 import { Cancel as CancelIcon } from '@mui/icons-material';
 import { FormControl, FormControlLabel, LinearProgress, Radio, RadioGroup, Slider, Stack } from '@mui/material';
+import { stripHtml } from "string-strip-html";
 
 import PresentationApi from '../fetch/PresentationApi';
 import IManifestData from '../interface/IManifestData';
@@ -36,8 +37,8 @@ interface IProps {
 
 const SearchFormAdvanced = (props: IProps) => {
   const { errors, fetching, initialValues, resultsInfo, onSubmit } = props;
-  const [query, setQuery] = useState<string>(initialValues.query);
-  const [internalQuery, setInternalQuery] = useState<string>(initialValues.query);
+  const [query, setQuery] = useState<string>(stripHtml(initialValues.query).result);
+  const [internalQuery, setInternalQuery] = useState<string>(stripHtml(initialValues.query).result);
   const [fuzzy, setFuzzy] = useState<number>(initialValues.fuzzy);
   const [searchField, setSearchField] = useState<string>(initialValues.searchField);
   const [yearRange, setYearRange] = useState<number[]>(initialValues.yearRange);
@@ -105,8 +106,9 @@ const SearchFormAdvanced = (props: IProps) => {
                       disabled={fetching}
                       value={internalQuery}
                       onChange={(ev) => {
-                        setQuery(ev.currentTarget.value.trim());
-                        setInternalQuery(ev.currentTarget.value);
+                        const trimmedValue = stripHtml(ev.currentTarget.value.trim()).result;
+                        setQuery(trimmedValue);
+                        setInternalQuery(trimmedValue);
                       }}
                     ></input>
                     <div className="mdc-linear-progress-wrap">
