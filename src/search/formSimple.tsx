@@ -4,6 +4,7 @@ import { Translation } from 'react-i18next';
 import { LinearProgress } from '@mui/material';
 import Tooltip from '../tooltip/tooltip';
 import DOMPurify from 'dompurify';
+import { stripHtml } from "string-strip-html";
 
 interface IProps {
   errors: string[];
@@ -19,8 +20,8 @@ interface IProps {
 
 const SearchFormSimple = (props: IProps) => {
   const { errors, fetching, initialValues, resultsInfo, onSubmit } = props;
-  const [query, setQuery] = useState<string>(initialValues.query);
-  const [internalQuery, setInternalQuery] = useState<string>(initialValues.query);
+  const [query, setQuery] = useState<string>(stripHtml(initialValues.query).result);
+  const [internalQuery, setInternalQuery] = useState<string>(stripHtml(initialValues.query).result);
 
   const handleSubmit = (e?: SyntheticEvent) => {
     e?.preventDefault();
@@ -54,8 +55,9 @@ const SearchFormSimple = (props: IProps) => {
                       disabled={fetching}
                       value={internalQuery}
                       onChange={(ev) => {
-                        setQuery(ev.currentTarget.value.trim());
-                        setInternalQuery(ev.currentTarget.value);
+                        const trimmedValue = stripHtml(ev.currentTarget.value.trim()).result;
+                        setQuery(trimmedValue);
+                        setInternalQuery(trimmedValue);
                       }}
                     ></input>
                     <div className="mdc-linear-progress-wrap">
