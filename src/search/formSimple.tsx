@@ -5,6 +5,7 @@ import { LinearProgress } from '@mui/material';
 import Tooltip from '../tooltip/tooltip';
 import DOMPurify from 'dompurify';
 import { stripHtml } from "string-strip-html";
+import he from 'he';
 
 interface IProps {
   errors: string[];
@@ -36,7 +37,7 @@ const SearchFormSimple = (props: IProps) => {
       query,
     });
   };
-
+  
   return (
     <Translation ns="common">
       {(t) => (
@@ -55,9 +56,8 @@ const SearchFormSimple = (props: IProps) => {
                       disabled={fetching}
                       value={internalQuery}
                       onChange={(ev) => {
-                        const trimmedValue = stripHtml(ev.currentTarget.value.trim()).result;
-                        setQuery(trimmedValue);
-                        setInternalQuery(trimmedValue);
+                        setQuery(ev.currentTarget.value.trim());
+                        setInternalQuery(ev.currentTarget.value);
                       }}
                     ></input>
                     <div className="mdc-linear-progress-wrap">
@@ -97,7 +97,7 @@ const SearchFormSimple = (props: IProps) => {
                     __html: DOMPurify.sanitize(
                       `${t('searchFormFoundMatches', {
                         numFound: resultsInfo.numFound,
-                        q: resultsInfo.query,
+                        q: stripHtml(he.decode(resultsInfo.query)).result,
                         QTime: resultsInfo.time,
                       })}`
                     ),

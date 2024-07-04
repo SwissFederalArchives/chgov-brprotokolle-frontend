@@ -6,8 +6,9 @@ import {
   SetStateAction,
 } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-
+import { stripHtml } from "string-strip-html";
 import qs from 'qs';
+import he from 'he';
 
 export function useQueryState<T = string>(
   name: string,
@@ -31,7 +32,7 @@ export function useQueryState<T = string>(
       if (newValue === null || newValue === undefined) {
         delete existingQueries[name];
       } else {
-        existingQueries[name] = format(newValue);
+        existingQueries[name] = stripHtml(he.decode(format(newValue))).result;
       }
 
       const queryString = qs.stringify(existingQueries, {
@@ -44,9 +45,14 @@ export function useQueryState<T = string>(
     [history, location, name, format, initialValue]
   );
 
-  const currentValue =
+  let currentValue =
     qs.parse(location.search, { ignoreQueryPrefix: true })[name] ||
     initialValue;
+
+  // sanitize the value
+  if (typeof currentValue === 'string') {
+    currentValue = stripHtml(he.decode(currentValue)).result;
+  }
 
   return [parse(String(currentValue !== null ? currentValue : '')), setQuery];
 }
