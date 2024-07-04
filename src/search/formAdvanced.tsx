@@ -5,6 +5,7 @@ import * as DOMPurify from 'dompurify';
 import { Cancel as CancelIcon } from '@mui/icons-material';
 import { FormControl, FormControlLabel, LinearProgress, Radio, RadioGroup, Slider, Stack } from '@mui/material';
 import { stripHtml } from "string-strip-html";
+import he from 'he';
 
 import PresentationApi from '../fetch/PresentationApi';
 import IManifestData from '../interface/IManifestData';
@@ -106,9 +107,8 @@ const SearchFormAdvanced = (props: IProps) => {
                       disabled={fetching}
                       value={internalQuery}
                       onChange={(ev) => {
-                        const trimmedValue = stripHtml(ev.currentTarget.value.trim()).result;
-                        setQuery(trimmedValue);
-                        setInternalQuery(trimmedValue);
+                        setQuery(ev.currentTarget.value.trim());
+                        setInternalQuery(ev.currentTarget.value);
                       }}
                     ></input>
                     <div className="mdc-linear-progress-wrap">
@@ -237,7 +237,7 @@ const SearchFormAdvanced = (props: IProps) => {
                     __html: DOMPurify.sanitize(
                       `${t('searchFormFoundMatches', {
                         numFound: resultsInfo.numFound,
-                        q: resultsInfo.query,
+                        q: stripHtml(he.decode(resultsInfo.query)).result,
                         QTime: resultsInfo.time,
                       })}`
                     ),
