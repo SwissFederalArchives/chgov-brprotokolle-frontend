@@ -62,7 +62,7 @@ const rootline = {
             },
             {
                 id: "project",
-                toggle: "Protokolle des Bundesrates (1848-1972)",
+                toggle: "Protokolle des Bundesrates (1848-1973)",
             }
         ]
     },
@@ -129,7 +129,7 @@ const rootline = {
             },
             {
                 id: "project",
-                toggle: "Procès-verbaux du Conseil fédéral (1848-1972)",
+                toggle: "Procès-verbaux du Conseil fédéral (1848-1973)",
             }
         ]
     },
@@ -196,7 +196,7 @@ const rootline = {
             },
             {
                 id: "project",
-                toggle: "Verbali del Consiglio federale (1848-1972)",
+                toggle: "Verbali del Consiglio federale (1848-1973)",
             }
         ]
     },
@@ -263,7 +263,7 @@ const rootline = {
             },
             {
                 id: "project",
-                toggle: "Minutes of the Federal Council (1848-1972)",
+                toggle: "Minutes of the Federal Council (1848-1973)",
             }
         ]
     }
