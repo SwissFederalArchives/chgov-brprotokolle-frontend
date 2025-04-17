@@ -235,11 +235,13 @@ const SearchFormAdvanced = (props: IProps) => {
                   dangerouslySetInnerHTML={{
                     // eslint-disable-line react/no-danger
                     __html: DOMPurify.sanitize(
-                      `${t('searchFormFoundMatches', {
-                        numFound: resultsInfo.numFound,
-                        q: stripHtml(he.decode(resultsInfo.query)).result,
-                        QTime: resultsInfo.time,
-                      })}`
+                      String(
+                        t('searchFormFoundMatches', {
+                          numFound: resultsInfo.numFound,
+                          q: DOMPurify.sanitize(resultsInfo.query, {ALLOWED_TAGS: []}),
+                          QTime: resultsInfo.time,
+                        }) || ''
+                      )
                     ),
                   }}
                 />
