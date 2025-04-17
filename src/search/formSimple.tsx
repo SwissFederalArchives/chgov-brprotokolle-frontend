@@ -4,8 +4,6 @@ import { Translation } from 'react-i18next';
 import { LinearProgress } from '@mui/material';
 import Tooltip from '../tooltip/tooltip';
 import DOMPurify from 'dompurify';
-import { stripHtml } from "string-strip-html";
-import he from 'he';
 
 interface IProps {
   errors: string[];
@@ -21,8 +19,8 @@ interface IProps {
 
 const SearchFormSimple = (props: IProps) => {
   const { errors, fetching, initialValues, resultsInfo, onSubmit } = props;
-  const [query, setQuery] = useState<string>(stripHtml(initialValues.query).result);
-  const [internalQuery, setInternalQuery] = useState<string>(stripHtml(initialValues.query).result);
+  const [query, setQuery] = useState<string>(DOMPurify.sanitize(initialValues.query, {ALLOWED_TAGS: []}));
+  const [internalQuery, setInternalQuery] = useState<string>(DOMPurify.sanitize(initialValues.query, {ALLOWED_TAGS: []}));
 
   const handleSubmit = (e?: SyntheticEvent) => {
     e?.preventDefault();

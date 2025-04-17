@@ -4,8 +4,6 @@ import { Translation } from 'react-i18next';
 import * as DOMPurify from 'dompurify';
 import { Cancel as CancelIcon } from '@mui/icons-material';
 import { FormControl, FormControlLabel, LinearProgress, Radio, RadioGroup, Slider, Stack } from '@mui/material';
-import { stripHtml } from "string-strip-html";
-import he from 'he';
 
 import PresentationApi from '../fetch/PresentationApi';
 import IManifestData from '../interface/IManifestData';
@@ -38,8 +36,8 @@ interface IProps {
 
 const SearchFormAdvanced = (props: IProps) => {
   const { errors, fetching, initialValues, resultsInfo, onSubmit } = props;
-  const [query, setQuery] = useState<string>(stripHtml(initialValues.query).result);
-  const [internalQuery, setInternalQuery] = useState<string>(stripHtml(initialValues.query).result);
+  const [query, setQuery] = useState<string>(DOMPurify.sanitize(initialValues.query, {ALLOWED_TAGS: []}));
+  const [internalQuery, setInternalQuery] = useState<string>(DOMPurify.sanitize(initialValues.query, {ALLOWED_TAGS: []}));
   const [fuzzy, setFuzzy] = useState<number>(initialValues.fuzzy);
   const [searchField, setSearchField] = useState<string>(initialValues.searchField);
   const [yearRange, setYearRange] = useState<number[]>(initialValues.yearRange);

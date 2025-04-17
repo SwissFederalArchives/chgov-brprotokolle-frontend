@@ -6,7 +6,7 @@ import {
   SetStateAction,
 } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import { stripHtml } from "string-strip-html";
+import DOMPurify from 'dompurify';
 import qs from 'qs';
 import he from 'he';
 
@@ -32,7 +32,7 @@ export function useQueryState<T = string>(
       if (newValue === null || newValue === undefined) {
         delete existingQueries[name];
       } else {
-        existingQueries[name] = stripHtml(he.decode(format(newValue))).result;
+        existingQueries[name] = DOMPurify.sanitize(format(newValue), {ALLOWED_TAGS: []});
       }
 
       const queryString = qs.stringify(existingQueries, {
@@ -51,7 +51,7 @@ export function useQueryState<T = string>(
 
   // sanitize the value
   if (typeof currentValue === 'string') {
-    currentValue = stripHtml(he.decode(currentValue)).result;
+    currentValue = DOMPurify.sanitize(currentValue, {ALLOWED_TAGS: []});
   }
 
   return [parse(String(currentValue !== null ? currentValue : '')), setQuery];
