@@ -26,7 +26,7 @@
   "zoomReset": "Ansicht zurücksetzen",
 
   "headerProjectTitle": "Schweizerisches Bundesarchiv",
-  "headerProjectSubtitle": "Protokolle des Bundesrates (1848-1973)",
+  "headerProjectSubtitle": "Protokolle des Bundesrates (1848-1974)",
   "footerTitle": "Schweizerisches Bundesarchiv BAR",
   "footerTermsAndConditionsLabel": "Rechtliche Hinweise",
   "footerTermsAndConditionsLink": "http://www.disclaimer.admin.ch/terms_and_conditions.html",
@@ -38,7 +38,7 @@
   "navItemManual": "Hilfe",
   "navItemInformation": "Information",
 
-  "pageTitle": "Protokolle des Bundesrates (1848-1973) - {{individual}}",
+  "pageTitle": "Protokolle des Bundesrates (1848-1974) - {{individual}}",
   "pageTitleIndividualBrowser": "Chronologisches Verzeichnis",
   "pageTitleIndividualSearch": "Suche",
   "pageTitleIndividualManual": "Hilfe",
@@ -59,7 +59,7 @@
   "searchFormOrderBy_score desc": "Relevanz",
   "searchFormOrderBy_frequency": "Anzahl Treffer",
   "searchResultsMatchingPassages": "{{amount}} übereinstimmende Passagen im Text gefunden",
-  "searchIntroductionText": "Auf der Seite Protokolle des Bundesrates (1848-1973) können Sie sowohl die handschriftlichen als auch die maschinengeschriebenen Beschlussprotokolle des Bundesrates nach Suchbegriffen durchsuchen.",
+  "searchIntroductionText": "Auf der Seite Protokolle des Bundesrates (1848-1974) können Sie sowohl die handschriftlichen als auch die maschinengeschriebenen Beschlussprotokolle des Bundesrates nach Suchbegriffen durchsuchen.",
 
   "protocolMiradorOcrPluginEmailRecipient": "bundesratsprotokolle@bar.admin.ch",
   "protocolMiradorSearchTitle": "Suche im Dokument",
