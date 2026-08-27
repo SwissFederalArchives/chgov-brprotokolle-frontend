@@ -50,7 +50,11 @@ class Config {
         this.id = config.id;
         this.language = config.language ? config.language : window.navigator.language;
         this.manifest = config.manifest ? config.manifest : '';
-        this.allowedOrigins = config.allowedOrigins ? config.allowedOrigins : '*';
+        this.allowedOrigins = config.allowedOrigins
+            ? config.allowedOrigins
+            : process.env.REACT_APP_ALLOWED_ORIGINS
+                ? process.env.REACT_APP_ALLOWED_ORIGINS.split(',').map((origin) => origin.trim())
+                : '*';
         this.disableSharing = config.disableSharing ? config.disableSharing : false;
         this.disableDownload = config.disableDownload ? config.disableDownload : false;
         this.disableLanguageSelection = config.disableLanguageSelection ? config.disableLanguageSelection : false;
